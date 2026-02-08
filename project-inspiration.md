@@ -3,15 +3,18 @@
 ## Tendencias Destacadas en Diseño Web (2025)
 
 ### 1. Brutalismo & Neo-Brutalismo
+
 - **Descripción:** Estética cruda y directa, tipografía llamativa, contraste fuerte, elementos sin pulir.
 - **Ejemplo:** [Gumroad](https://gumroad.com)
 
 ### 2. Glassmorfismo
+
 - **Descripción:** Uso creativo de transparencias y difuminados tipo vidrio esmerilado.
 - **Referencia:** [MDN - backdrop-filter](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter)
 - **CSS Destacado:** `backdrop-filter: blur(10px)`
 
 ### 3. Tipografía Cinética
+
 - **Descripción:** Textos animados y adaptativos que interactúan o acompañan la navegación.
 - **Ejemplos y Recursos:**
   - [Colección de animaciones tipográficas](https://tympanus.net/codrops/tag/typography/)
@@ -19,14 +22,17 @@
   - [Animaciones por scroll](https://tympanus.net/codrops/2023/01/18/on-scroll-typography-animations/)
 
 ### 4. UI Modular & Web Components
+
 - **Descripción:** Construcción de interfaces a partir de bloques reutilizables y compatibles.
 - **Referencia general:** [Web Components MDN](https://developer.mozilla.org/en-US/docs/Web/Web_Components)
 
 ### 5. Design Systems
+
 - **Descripción:** Uso sistemático de tokens para color, espacio, tipografía y componentes coherentes.
 - **Repositorio de sistemas:** [Design Systems Repo](https://designsystemsrepo.com/design-systems/)
 
 ### 6. Web Sostenible
+
 - **Descripción:** Experiencias web eficientes, optimizadas para bajo consumo y menor huella de carbono.
 - **Guía de buenas prácticas:** [Sustainable Web Design](https://www.wholegraindigital.com/blog/sustainable-web-design/)
 
@@ -179,11 +185,11 @@ _Example: Clean, modern, with earthy tones (greens, browns, off-white). Lots of 
 **What do you want to learn/demonstrate?**
 _Example: Master CSS Grid for complex layouts, implement smooth scroll animations, achieve 95+ Lighthouse scores, ensure WCAG AA accessibility._
 
-- [ ] Goal 1: [e.g., Responsive design with CSS Grid]
-- [ ] Goal 2: [e.g., Accessible navigation with ARIA]
-- [ ] Goal 3: [e.g., Optimized images and lazy loading]
-- [ ] Goal 4: [e.g., Dark mode toggle]
-- [ ] Goal 5: [e.g., Smooth scroll animations]
+- [x] Goal 1: [e.g., Responsive design with CSS Grid]
+- [x] Goal 2: [e.g., Accessible navigation with ARIA]
+- [x] Goal 3: [e.g., Optimized images and lazy loading]
+- [x] Goal 4: [e.g., Dark mode toggle]
+- [x] Goal 5: [e.g., Smooth scroll animations]
 
 ---
 
@@ -224,3 +230,20 @@ _Example: Master CSS Grid for complex layouts, implement smooth scroll animation
 ---
 
 **Remember**: Inspiration is about finding what resonates with you and your project goals. Don't copy—synthesize ideas into something uniquely yours!
+
+---
+
+## Análisis rápido: galerías y portfolios a revisar
+
+URLs analizadas:
+
+- https://www.art-yakushev.com/
+- https://rubioydelamo.com/proyecto/diseno-de-paneras-verticales/
+- https://www.vasava.es/es
+- https://spicyagenciacreativa.com/portfolio/uber-eats-mcdonalds/
+
+Patrones transferibles (no copiar estética):
+
+- Diseño enfocado en la imagen: priorizar thumbnails grandes y claros con captions mínimas para invitar a explorar sin abrumar.
+- Jerarquía de proyecto clara: cada tarjeta muestra título + rol/tags breves, y un CTA consistente («Ver proyecto») que lleva a un caso de estudio enfocado.
+- Micro‑interacciones discursivas: animaciones sutiles en hover/focus que comunican estado (previsualizar, abrir, marcar) sin sacrificar rendimiento.

@@ -1,7 +1,7 @@
 # Project Brief
 
-**Student:** [Your Name]  
-**Handle:** @[your-github-username]  
+**Student:** [Romina]  
+**Handle:** @[romina_mta_portfolio]  
 **Course:** Web Design 2025 · Fall  
 **Date:** [Fill in date - Week 2]
 
@@ -11,15 +11,15 @@
 
 ### What are you building?
 
-<!-- Describe your project in 2-3 sentences -->
+Se llevará a cabo una página donde se alojarán proyectos de ilustración y diseño. Será un portafolio personal que destaque por su autenticidad y la experiencia de usuario. El objetivo es la diferenciación dentro del mercado laboral creativo.
 
 ### Who is it for?
 
-<!-- Define your target audience -->
+El portafolio está dirigido a diseñadores y a profesionales del sector creativo que integran la ilustración en sus proyectos. Se orienta especialmente a agencias publicitarias y editoriales que valoran este recurso como un elemento diferenciador.
 
 ### Why does it matter?
 
-<!-- Explain the purpose and value of your project -->
+Mi propuesta de valor se basa en la integración de la ilustración y el diseño como disciplinas complementarias. A partir de mi bagaje cultural latino, desarrollo nuevas formas de abordar lo visual, priorizando un estilo personal que aporta autenticidad y singularidad al proyecto.
 
 ---
 
@@ -55,13 +55,21 @@
 
 ### Key Sections/Pages
 
-1.
-2.
-3.
+1.Banner
+2.Sobre mi
+3.Proyectos:ILUSTRACIÓN,BRANDING Y SOCIAL MEDIA
+4.Contacto
+
+### Decisiones concretas (layout + contenido)
+
+- Layout: galería en grid responsivo basado en CSS Grid — 2 columnas en desktop, 1 en móvil, punto focal en la imagen. Las tarjetas usarán variables de espaciado y color desde `assets/css/_variables.css` para mantener coherencia y facilitar ajustes.
+- Contenido por proyecto: cada tarjeta mostrará título, rol (p.ej. ilustración / branding), 3 tags y un CTA «Ver proyecto». La página de proyecto incluirá una imagen principal optimizada (srcset), una breve descripción (1–2 líneas), lista de herramientas y el año.
 
 ### Content Sources
 
 <!-- Where will your content come from? -->
+
+El contenido proviene de mi trabajo personal, recopilado durante los años de formación académica y mi experiencia en agencias de diseño.
 
 ### Multilingual Considerations
 
@@ -75,19 +83,34 @@
 
 ### Visual Style
 
-<!-- Describe your aesthetic approach -->
+El estilo visual se basa en lo retro y lo urbano, dos estéticas de interés personal que combinan la cultura con lo contemporáneo. Se prioriza una disposición limpia y legible, con una jerarquía tipográfica construida a partir de fuentes sans serif.
+
+![alt text](image/inspiration/layaout.png)
 
 ### Color Palette
 
 <!-- List your main colors -->
 
+La paleta utiliza como color principal el azul ultramar, por su capacidad para transmitir confianza y elegancia, acompañado de rojo y tonos vibrantes que refuerzan el carácter urbano mencionado. Esta combinación permitirá diferenciar las secciones de ilustración, branding y social media.
+
+- ![alt text](<image/inspiration/color palette.png>)
+
+**Notas de implementación (accesibilidad y rendimiento):** usar tokens de color y espacio en `assets/css/_variables.css`; priorizar contraste WCAG AA para textos y CTAs; generar `srcset` y `loading="lazy"` para imágenes de galería.
+
 ### Typography
 
 <!-- What fonts/typeface approach will you use? -->
 
+Las fuentes escogidas fueron: Versos text font y Rubik font, por su legibiildad y afinidad gráfica con el proyecto, debido a que dotan características formales del pasado por su origen conceptual basados en el cubo rubick y las tipografías de televisores antiguos. estas destacan porsu toque modreno que les permite adaptarse a cualquier formato.
+
 ### Inspiration/References
 
 <!-- List 2-3 websites or designs that inspire your approach -->
+
+- https://www.art-yakushev.com/
+- https://rubioydelamo.com/proyecto/diseno-de-paneras-verticales/
+- https://www.vasava.es/es
+- https://spicyagenciacreativa.com/portfolio/uber-eats-mcdonalds/
 
 ---
 
@@ -114,7 +137,11 @@
 
 ### What excites you most about this project?
 
+Es interesante realizar un portafolio profesional utilizando herramientas de IA para agilizar la carga de trabajo al usar código.
+
 ### What challenges do you anticipate?
+
+Creo que el mayor reto es comprender y usar los diversos lenguajes de programacín sin perderme en el proceso.
 
 ### How does this project connect to your learning goals?
 
