@@ -55,15 +55,12 @@ Mi propuesta de valor se basa en la integración de la ilustración y el diseño
 
 ### Key Sections/Pages
 
-1.Banner
-2.Sobre mi
-3.Proyectos:ILUSTRACIÓN,BRANDING Y SOCIAL MEDIA
-4.Contacto
-
-### Decisiones concretas (layout + contenido)
-
-- Layout: galería en grid responsivo basado en CSS Grid — 2 columnas en desktop, 1 en móvil, punto focal en la imagen. Las tarjetas usarán variables de espaciado y color desde `assets/css/_variables.css` para mantener coherencia y facilitar ajustes.
-- Contenido por proyecto: cada tarjeta mostrará título, rol (p.ej. ilustración / branding), 3 tags y un CTA «Ver proyecto». La página de proyecto incluirá una imagen principal optimizada (srcset), una breve descripción (1–2 líneas), lista de herramientas y el año.
+1. Banner (imagen hero + mensaje claro y CTA a proyectos)
+2. Sobre mi (breve biografía, skills y contacto rápido)
+3. Proyectos: ILUSTRACIÓN, BRANDING Y SOCIAL MEDIA
+   - Galería principal: grid editorial de tarjetas grandes (imagen, título, disciplina, año, CTA “Ver caso”).
+   - Proyectos destacados: 2-3 casos con páginas completas (hero, proceso, resultado).
+4. Contacto (formulario simple + enlaces a redes)
 
 ### Content Sources
 
@@ -95,13 +92,16 @@ La paleta utiliza como color principal el azul ultramar, por su capacidad para t
 
 - ![alt text](<image/inspiration/color palette.png>)
 
-**Notas de implementación (accesibilidad y rendimiento):** usar tokens de color y espacio en `assets/css/_variables.css`; priorizar contraste WCAG AA para textos y CTAs; generar `srcset` y `loading="lazy"` para imágenes de galería.
-
 ### Typography
 
 <!-- What fonts/typeface approach will you use? -->
 
 Las fuentes escogidas fueron: Versos text font y Rubik font, por su legibiildad y afinidad gráfica con el proyecto, debido a que dotan características formales del pasado por su origen conceptual basados en el cubo rubick y las tipografías de televisores antiguos. estas destacan porsu toque modreno que les permite adaptarse a cualquier formato.
+
+### Design Decisions (concretas)
+
+- Decisión 1 (Layout): Implementar un `grid editorial` para la galería principal — móvil: 1 columna; tablet: 2 columnas; desktop: 3 columnas. Cada tarjeta incluirá imagen, título, disciplina y CTA "Ver caso".
+- Decisión 2 (Contenido): Para proyectos seleccionados ofrecer páginas de caso con: hero, breve descripción (1-2 frases), proceso (3-5 imágenes con captions) y tags (ilustración/branding/social, año, rol).
 
 ### Inspiration/References
 

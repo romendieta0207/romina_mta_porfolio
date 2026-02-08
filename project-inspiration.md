@@ -229,21 +229,21 @@ _Example: Master CSS Grid for complex layouts, implement smooth scroll animation
 
 ---
 
-**Remember**: Inspiration is about finding what resonates with you and your project goals. Don't copy—synthesize ideas into something uniquely yours!
+## Analizadas (análisis rápido)
 
----
-
-## Análisis rápido: galerías y portfolios a revisar
-
-URLs analizadas:
+He analizado las siguientes URLs y extraído patrones transferibles aplicables a tu proyecto:
 
 - https://www.art-yakushev.com/
 - https://rubioydelamo.com/proyecto/diseno-de-paneras-verticales/
 - https://www.vasava.es/es
-- https://spicyagenciacreativa.com/portfolio/uber-eats-mcdonalds/
+- https://spicyagenciacreativa.com/
 
-Patrones transferibles (no copiar estética):
+### Patrones transferibles (sin copiar estética)
 
-- Diseño enfocado en la imagen: priorizar thumbnails grandes y claros con captions mínimas para invitar a explorar sin abrumar.
-- Jerarquía de proyecto clara: cada tarjeta muestra título + rol/tags breves, y un CTA consistente («Ver proyecto») que lleva a un caso de estudio enfocado.
-- Micro‑interacciones discursivas: animaciones sutiles en hover/focus que comunican estado (previsualizar, abrir, marcar) sin sacrificar rendimiento.
+- Fichas editoriales grandes: tarjetas con imagen dominante y metadatos breves (disciplina, año). Ideal para portfolios con foco en ilustración.
+- Caso de estudio estructurado: hero + proceso + resultado para 2-4 proyectos destacados, ayudando a contar tu proceso creativo.
+- Previews recortadas con foco inteligente: mantener coherencia visual en la rejilla y asegurar ritmo al navegar.
+
+---
+
+**Remember**: Inspiration is about finding what resonates with you and your project goals. Don't copy—synthesize ideas into something uniquely yours!
