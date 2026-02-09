@@ -57,7 +57,7 @@ Mi propuesta de valor se basa en la integración de la ilustración y el diseño
 
 1. Banner (imagen hero + mensaje claro y CTA a proyectos)
 2. Sobre mi (breve biografía, skills y contacto rápido)
-3. Proyectos: ILUSTRACIÓN, BRANDING Y SOCIAL MEDIA
+3. Proyectos: ILUSTRACIÓN, BRANDING Y EDITORIAL
    - Galería principal: grid editorial de tarjetas grandes (imagen, título, disciplina, año, CTA “Ver caso”).
    - Proyectos destacados: 2-3 casos con páginas completas (hero, proceso, resultado).
 4. Contacto (formulario simple + enlaces a redes)
@@ -97,6 +97,10 @@ La paleta utiliza como color principal el azul ultramar, por su capacidad para t
 <!-- What fonts/typeface approach will you use? -->
 
 Las fuentes escogidas fueron: Versos text font y Rubik font, por su legibiildad y afinidad gráfica con el proyecto, debido a que dotan características formales del pasado por su origen conceptual basados en el cubo rubick y las tipografías de televisores antiguos. estas destacan porsu toque modreno que les permite adaptarse a cualquier formato.
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 
 ### Design Decisions (concretas)
 
