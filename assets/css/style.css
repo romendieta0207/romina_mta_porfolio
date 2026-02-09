@@ -15,32 +15,35 @@
    layout → components → utilities → a11y → responsive → print
    ============================================ */
 
+/* 0. Google Fonts import - Rubik typeface for Romina's portfolio */
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
 /* 1. Variables first: tokens used by all other modules */
-@import '_variables.css';
+@import "_variables.css";
 
 /* 2. Reset: normalize browser defaults */
-@import '_reset.css';
+@import "_reset.css";
 
 /* 3. Base: typography, links, raw HTML elements */
-@import '_base.css';
+@import "_base.css";
 
 /* 4. Layout: containers, grids, main structure */
-@import '_layout.css';
+@import "_layout.css";
 
 /* 5. Components: header, footer, buttons, cards */
-@import '_components.css';
+@import "_components.css";
 
 /* 5.5 Scrollytelling: progressive reveal components */
-@import '_scrollytelling.css';
+@import "_scrollytelling.css";
 
 /* 6. Utilities: single-purpose helper classes */
-@import '_utilities.css';
+@import "_utilities.css";
 
 /* 7. Accessibility: sr-only, skip-link, reduced motion */
-@import '_accessibility.css';
+@import "_accessibility.css";
 
 /* 8. Responsive: breakpoint overrides */
-@import '_responsive.css';
+@import "_responsive.css";
 
 /* 9. Print: print-specific styles */
-@import '_print.css';
+@import "_print.css";

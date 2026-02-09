@@ -90,16 +90,20 @@ El estilo visual se basa en lo retro y lo urbano, dos estéticas de interés per
 
 La paleta utiliza como color principal el azul ultramar, por su capacidad para transmitir confianza y elegancia, acompañado de rojo y tonos vibrantes que refuerzan el carácter urbano mencionado. Esta combinación permitirá diferenciar las secciones de ilustración, branding y social media.
 
+#0b3249
+#679cf5
+#fff1d6
+#f6bc3f
+#ed1d2f
+
 - ![alt text](<image/inspiration/color palette.png>)
 
 ### Typography
 
 <!-- What fonts/typeface approach will you use? -->
 
-Las fuentes escogidas fueron: Versos text font y Rubik font, por su legibiildad y afinidad gráfica con el proyecto, debido a que dotan características formales del pasado por su origen conceptual basados en el cubo rubick y las tipografías de televisores antiguos. estas destacan porsu toque modreno que les permite adaptarse a cualquier formato.
+Las fuentes escogidas fueron: Versos text font y Rubik font, por su legibiildad y afinidad gráfica con el proyecto, debido a que dotan características formales del pasado por su origen conceptual basados en el cubo rubick y las tipografías de televisores antiguos. estas destacan porsu toque modreno que les permite adaptarse a cualquier formato.>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 
 ### Design Decisions (concretas)
