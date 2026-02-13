@@ -34,9 +34,9 @@
   --color-primary-dark: #061b27;
 
   /* Colors - Secondary */
-  --color-secondary: #ed1d2e;
+  --color-secondary: #d23f57;
   --color-secondary-light: #f6bc3f;
-  --color-secondary-dark: #fff1d6;
+  --color-secondary-dark: rgb(255, 241, 214);
 
   /* Colors - Neutral */
   --color-white: #ffffff;

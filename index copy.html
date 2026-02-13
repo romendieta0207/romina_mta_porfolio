@@ -12,10 +12,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
       rel="stylesheet"
     />
-    />
+    /> />
 
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
@@ -24,8 +24,21 @@
 
     <!-- Hero Section -->
     <div class="hero">
-      <div>
-        <h1>📜 Tu Nombre</h1>
+      <!-- Video de fondo -->
+      <video autoplay muted loop playsinline class="hero-video">
+        <source
+          src="https://ik.imagekit.io/romendieta0207/videos/MENDIETA_ROMINA_SPOT_MORITZ.%20mp4?updatedAt=1770578591612"
+          type="video/mp4"
+        />
+        Tu navegador no soporta videos HTML5
+      </video>
+
+      <!-- Overlay oscuro para mejor legibilidad -->
+      <div class="hero-overlay"></div>
+
+      <!-- Contenido del texto -->
+      <div class="hero-content">
+        <h1>ROMINA MENDIETA</h1>
         <p>Historias visuales que cobran vida<br />Portfolio de Ilustración</p>
         <div class="scroll-indicator">↓ Scroll para descubrir mi trabajo ↓</div>
       </div>
@@ -38,9 +51,10 @@
         <div class="story-content">
           <h2>Sobre Mí</h2>
           <p class="text-large">
-            Soy ilustrador/a especializado en [tu especialización]. Mi trabajo
-            explora [tu visión artística], combinando técnicas tradicionales con
-            herramientas digitales.
+            Soy diseñadora gráfica e ilustradora. Me dedico a generar proyectos
+            con estructura, creatividad y practicidad. He desarrollado trabajos
+            de ilustración para pósters musicales, branding y productos
+            editoriales.
           </p>
 
           <div class="stat-display">
@@ -71,6 +85,7 @@
         <div class="parallax-content">
           <h3>El Arte de Contar Historias Visuales</h3>
           <p class="text-large">Cada trazo tiene un propósito</p>
+           <div class="scroll-indicator">↓ Scroll para descubrir mi trabajo ↓</div>
         </div>
       </div>
 
@@ -78,37 +93,39 @@
       <section class="story-section chapter-2" data-observe>
         <div class="story-content">
           <h2>Mi Trabajo</h2>
-          <p class="text-large mb-lg">
-            Me especializo en varias áreas de ilustración:
-          </p>
+          <p class="text-large mb-lg">Me especializo en varias áreas de ilustración:</p>
 
-          <div class="interactive-cards">
-            <div class="card">
-              <h4>Editorial</h4>
-              <p>
-                Ilustraciones para revistas, libros y publicaciones digitales
-                que capturan la esencia de cada historia.
-              </p>
+          <!-- Grid de categorías -->
+          <div class="categories-grid">
+            
+            <!-- Categoría 1 -->
+            <div class="category-card">
+              <div class="category-number">01</div>
+              <h3>Editorial</h3>
+              <p>Ilustraciones para revistas, libros y publicaciones digitales que capturan la esencia de cada historia.</p>
+              <a href="#" class="category-link">Ver proyectos →</a>
             </div>
-            <div class="card">
-              <h4>Branding</h4>
-              <p>
-                Identidades visuales únicas que ayudan a las marcas a conectar
-                emocionalmente con su audiencia.
-              </p>
+
+            <!-- Categoría 2 -->
+            <div class="category-card">
+              <div class="category-number">02</div>
+              <h3>Branding</h3>
+              <p>Identidades visuales únicas que ayudan a las marcas a conectar emocionalmente con su audiencia.</p>
+              <a href="#" class="category-link">Ver proyectos →</a>
             </div>
-            <div class="card">
-              <h4>Digital</h4>
-              <p>
-                Arte conceptual y diseño de personajes para videojuegos,
-                animación y medios interactivos.
-              </p>
+
+            <!-- Categoría 3 -->
+            <div class="category-card">
+              <div class="category-number">03</div>
+              <h3>Digital</h3>
+              <p>Arte conceptual y diseño de personajes para videojuegos, animación y medios interactivos.</p>
+              <a href="#" class="category-link">Ver proyectos →</a>
             </div>
+
           </div>
 
           <p class="mt-lg">
-            Cada proyecto es una oportunidad para explorar nuevas técnicas y
-            estilos visuales.
+            Cada proyecto es una oportunidad para explorar nuevas técnicas y estilos visuales.
           </p>
         </div>
       </section>

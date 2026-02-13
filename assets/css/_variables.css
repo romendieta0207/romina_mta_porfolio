@@ -16,7 +16,7 @@
   /* Primary brand colors - Ultramarine Blue (Romina's palette) */
   --color-primary: #0b3249;
   --color-primary-hover: #082540;
-  --color-primary-light: #679cf5;
+  --color-primary-light: #d23f57;
   --color-primary-dark: #051d31;
 
   /* Neutral colors for text and backgrounds */
@@ -66,7 +66,7 @@
   --font-family-base:
     "Rubik", system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial,
     sans-serif;
-  --font-family-heading: "IBM Plex Sans", sans-serif;
+  --font-family-heading: "Rubik Mono One", monospace;
   --font-family-mono:
 
   /* ===== SPACING SCALE ===== */
@@ -115,17 +115,18 @@
   /* ===== SCROLLYTELLING GRADIENTS ===== */
   /* Gradients based on Romina's retro-urban aesthetic */
   --gradient-hero: linear-gradient(135deg, #0b3249 0%, #679cf5 100%);
-  --gradient-chapter-1: linear-gradient(135deg, #0b3249 0%, #f6bc3f 100%);
-  --gradient-chapter-2: linear-gradient(135deg, #ed1d2f 0%, #f6bc3f 100%);
+
+  --gradient-chapter-1: linear-gradient(135deg, #d23f57 0%, #0b3249 100%);
+  --gradient-chapter-2: linear-gradient(135deg, #0b3249 0%, #679cf5 100%);
   --gradient-chapter-3: linear-gradient(135deg, #679cf5 0%, #fff1d6 100%);
 
   /* ===== SCROLLYTELLING COLORS ===== */
   /* Accent colors aligned with project disciplines: Ilustración, Branding, Editorial */
-  --color-accent-blue: #679cf5;
-  --color-accent-red: #ed1d2f;
+  --color-accent-blue: #0d1420;
+  --color-accent-red: #061b27;
   --color-accent-green: #f6bc3f;
   --color-overlay-dark: rgba(0, 0, 0, 0.4);
-  --color-card-bg: rgba(255, 255, 255, 0.05);
+  --color-card-bg: rgba(255, 23, 23, 0.391);
   --color-card-border: rgba(255, 255, 255, 0.1);
 }
 

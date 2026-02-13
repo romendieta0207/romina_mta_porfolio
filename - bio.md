@@ -2,7 +2,7 @@
 
 ## Perfil profesional
 
-Soy Romina Mendieta, diseñadora gráfica e ilustradora. Me dedico a generar proyectos con estructura, creatividad y practicidad. He desarrollado trabajos de ilustración para pósters musicales, branding y gestión de redes sociales.
+Soy Romina Mendieta, diseñadora gráfica e ilustradora. Me dedico a generar proyectos con estructura, creatividad y practicidad. He desarrollado trabajos de ilustración para pósters musicales, branding y productos editoriales.
 
 ## Experiencia laboral
 
