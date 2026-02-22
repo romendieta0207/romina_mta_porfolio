@@ -174,6 +174,29 @@ const linkObserver = new IntersectionObserver((entries) => {
 }, linkObserverOptions);
 sections.forEach((sec) => linkObserver.observe(sec));
 
+// ===== ACORDEÓN SERVICIOS =====
+// Abrir/cerrar tarjetas tipo acordeón
+
+const acordeonItems = document.querySelectorAll(".acordeon-item");
+if (acordeonItems.length) {
+  acordeonItems.forEach((item) => {
+    const header = item.querySelector(".acordeon-header");
+    const body = item.querySelector(".acordeon-body");
+    header.addEventListener("click", () => {
+      const isOpen = body.classList.contains("open");
+      // cerrar todos
+      acordeonItems.forEach((i) => {
+        i.querySelector(".acordeon-body").classList.remove("open");
+        i.querySelector(".acordeon-header").classList.remove("active");
+      });
+      if (!isOpen) {
+        body.classList.add("open");
+        header.classList.add("active");
+      }
+    });
+  });
+}
+
 // ===== WORK CAROUSEL - SCROLL SNAP (Estilo Framer) =====
 // Sincronizar indicadores con scroll position
 

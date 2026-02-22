@@ -15,6 +15,10 @@ Este plan describe cómo crear una sección de servicios con tarjetas tipo acord
 
 ```html
 <section class="servicios-acordeon" id="servicios">
+  <div class="servicios-header">
+    <h1>Servicios</h1>
+  </div>
+
   <div class="acordeon-item" data-service="ilustracion">
     <button class="acordeon-header">Ilustración</button>
     <div class="acordeon-body">
@@ -42,6 +46,11 @@ Este plan describe cómo crear una sección de servicios con tarjetas tipo acord
 </section>
 ```
 
+- El encabezado principal ahora utiliza `h1` dentro de un `div.servicios-header`.
+- Cada `.acordeon-item` contiene cabecera y cuerpo.
+- El botón de header controla la apertura.
+- `data-service` sirve para identificadores y estilos opcionales.
+
 - Cada `.acordeon-item` contiene cabecera y cuerpo.
 - El botón de header controla la apertura.
 - `data-service` sirve para identificadores y estilos opcionales.
@@ -54,6 +63,13 @@ Agregar al módulo correspondiente, por ejemplo `_components.css` o `_scrollytel
 .servicios-acordeon {
   max-width: 800px;
   margin: 0 auto;
+}
+
+/* Título de la sección: usa H1 y estilo prominente */
+.servicios-header h1 {
+  font-size: var(--font-size-4xl);
+  text-align: center;
+  margin-bottom: var(--space-lg);
 }
 
 .acordeon-item {
@@ -108,20 +124,20 @@ Agregar al módulo correspondiente, por ejemplo `_components.css` o `_scrollytel
 Interactividad para abrir/cerrar acordeón. Añadir en `main.js` o archivo nuevo.
 
 ```js
-const acordeonItems = document.querySelectorAll('.acordeon-item');
-acordeonItems.forEach(item => {
-  const header = item.querySelector('.acordeon-header');
-  const body = item.querySelector('.acordeon-body');
-  header.addEventListener('click', () => {
-    const isOpen = body.classList.contains('open');
+const acordeonItems = document.querySelectorAll(".acordeon-item");
+acordeonItems.forEach((item) => {
+  const header = item.querySelector(".acordeon-header");
+  const body = item.querySelector(".acordeon-body");
+  header.addEventListener("click", () => {
+    const isOpen = body.classList.contains("open");
     // cerrar todos
-    acordeonItems.forEach(i => {
-      i.querySelector('.acordeon-body').classList.remove('open');
-      i.querySelector('.acordeon-header').classList.remove('active');
+    acordeonItems.forEach((i) => {
+      i.querySelector(".acordeon-body").classList.remove("open");
+      i.querySelector(".acordeon-header").classList.remove("active");
     });
     if (!isOpen) {
-      body.classList.add('open');
-      header.classList.add('active');
+      body.classList.add("open");
+      header.classList.add("active");
     }
   });
 });

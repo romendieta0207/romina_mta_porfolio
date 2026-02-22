@@ -70,28 +70,41 @@
 
     <!-- Main Content -->
     <main id="main">
-      <!-- Servicios Section -->
-      <section class="servicios" id="servicios" data-observe>
-        <h2 class="servicios__heading">Servicios</h2>
-        <div class="servicios__grid">
-          <article class="servicio">
-            <h3 class="servicio__titulo">Ilustración Editorial</h3>
-            <p class="servicio__desc">
-              Imágenes para revistas, libros y medios digitales.
+      <!-- Servicios Section (Acordeón) -->
+      <section class="servicios-acordeon" id="servicios" data-observe>
+        <div class="servicios-header">
+          <h1>Servicios</h1>
+        </div>
+
+        <div class="acordeon-item" data-service="ilustracion">
+          <button class="acordeon-header">Ilustración</button>
+          <div class="acordeon-body">
+            <p>
+              Ilustraciones personalizadas para revistas, libros y medios
+              digitales.
             </p>
-          </article>
-          <article class="servicio">
-            <h3 class="servicio__titulo">Branding</h3>
-            <p class="servicio__desc">
-              Identidades visuales creativas y memorables.
-            </p>
-          </article>
-          <article class="servicio">
-            <h3 class="servicio__titulo">Digital</h3>
-            <p class="servicio__desc">
-              Arte para videojuegos, animación e interfaces.
-            </p>
-          </article>
+          </div>
+        </div>
+
+        <div class="acordeon-item" data-service="branding">
+          <button class="acordeon-header">Branding</button>
+          <div class="acordeon-body">
+            <p>Identidades visuales creativas y memorables para marcas.</p>
+          </div>
+        </div>
+
+        <div class="acordeon-item" data-service="editorial">
+          <button class="acordeon-header">Editorial</button>
+          <div class="acordeon-body">
+            <p>Proyectos editoriales con enfoque narrativo y estético.</p>
+          </div>
+        </div>
+
+        <div class="acordeon-item" data-service="social">
+          <button class="acordeon-header">Social Media</button>
+          <div class="acordeon-body">
+            <p>Contenido visual para redes sociales y campañas digitales.</p>
+          </div>
         </div>
       </section>
 
