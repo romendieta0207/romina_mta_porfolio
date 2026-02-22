@@ -52,8 +52,54 @@
   margin-bottom: var(--space-md);
   font-weight: var(--font-weight-bold);
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateY(30px) scale(0.95);
   animation: fadeInUp 1s ease forwards;
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+/* Expanded state for hero text on load */
+.hero.expanded .hero h1,
+.hero.expanded .hero p {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.hero p {
+  font-size: var(--font-size-lg);
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  margin: 0 auto var(--space-xl);
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+  animation: fadeInUp 1s ease 0.3s forwards;
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+/* Parallax/scroll effect for hero content */
+.hero-content {
+  transition: transform 0.2s ease-out;
+}
+
+/* Hero scroll state: reduce scale when user scrolls down */
+.hero.scrolled .hero h1,
+.hero.scrolled .hero p {
+  transform: translateY(0) scale(0.9);
+}
+
+/* Ensure hero h1 has smooth transform */
+.hero h1,
+.hero p {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Keyframe that includes scale for fadeInUp */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
 }
 
 .hero p {

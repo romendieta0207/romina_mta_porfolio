@@ -85,6 +85,27 @@ document.documentElement.style.scrollBehavior = "smooth";
 // PEDAGOGICAL NOTE: Respect user's accessibility preferences
 // If user prefers reduced motion, disable scroll animations
 
+// ===== HERO TEXT ANIMATION =====
+const hero = document.querySelector(".hero");
+const heroContent = document.querySelector(".hero-content");
+if (hero) {
+  // add expanded class after small delay to trigger CSS transition
+  window.addEventListener("load", () => {
+    setTimeout(() => hero.classList.add("expanded"), 100);
+  });
+
+  // parallax/scale effect on scroll
+  window.addEventListener("scroll", () => {
+    if (heroContent) {
+      const scrolled = window.scrollY;
+      heroContent.style.transform = `translateY(${scrolled * 0.3}px) scale(${Math.max(
+        1 - scrolled / 1200,
+        0.9,
+      )})`;
+    }
+  });
+}
+
 if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
   // Disable smooth scrolling
   document.documentElement.style.scrollBehavior = "auto";
@@ -94,6 +115,31 @@ if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
 
   console.log("Reduced motion preference detected - animations disabled");
 }
+
+// ===== HERO ANIMATIONS =====
+// Expand text on load and shrink on scroll
+
+window.addEventListener("DOMContentLoaded", () => {
+  const hero = document.querySelector(".hero");
+  if (hero) {
+    // trigger initial expansion after a tiny delay for animation
+    setTimeout(() => hero.classList.add("expanded"), 100);
+  }
+});
+
+window.addEventListener("scroll", () => {
+  const hero = document.querySelector(".hero");
+  if (hero) {
+    if (window.scrollY > 10) hero.classList.add("scrolled");
+    else hero.classList.remove("scrolled");
+
+    // optional parallax of content
+    const content = hero.querySelector(".hero-content");
+    if (content) {
+      content.style.transform = `translateY(${window.scrollY * 0.2}px)`;
+    }
+  }
+});
 
 // ===== NAVIGATION INTERACTIONS =====
 // Toggle mobile menu and highlight active section
