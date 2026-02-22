@@ -1,0 +1,14 @@
+/PROMPT:
+Genera  el plan de implementación:
+
+
+Genera el **código HTML + CSS + JavaScript** para el header del sitio inspirado en esta página: https://spicyagenciacreativa.com/
+Incluye:
+✔️ Logo
+✔️ Menú de navegación
+✔️ Scroll sticky o efecto smoothscroll
+✔️ Botones responsive para mobile
+✔️ Interacción: resaltar sección activa al hacer scroll
+
+Respeta estos estilos: assets/css/theme.css
+Y CREA OTRO DOCUMENTO  CON EL PLAN DE IMPLEMENTACIÓN.

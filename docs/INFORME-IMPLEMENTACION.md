@@ -596,3 +596,57 @@ En caso de problemas:
 **Implementación completada**: ✅ 13/02/2026  
 **Documentación**: ✅ Completa  
 **Estado Final**: 🚀 LISTO PARA PRODUCCIÓN
+
+---
+
+## 📘 Informe Adicional: Implementación de Estructura Inspirada en Spicy
+
+**Fecha**: 22/02/2026  
+**Objetivo**: Añadir secciones base (Hero CTA, Servicios, Clientes, Proyectos y Contacto) y documentar su implementación.
+
+### 🔧 Cambios Introducidos
+
+- **HTML**: Secciones nuevas con identificadores y clases BEM; CTA en hero.
+- **CSS**: Estilos específicos para cada sección, responsivos y animaciones de entrada.
+- **JS**: El sistema de observador existente abarca las nuevas secciones; se mantuvo scroll-behavior.
+
+### ✍️ Resumen
+
+La estructura del sitio ahora cuenta con bloques claros y accesibles, similares al sitio de referencia. Cada bloque es observable mediante scroll y presenta animaciones suaves. El CTA en el hero facilita el acceso directo a "Servicios". El informe de este apartado complementa el plan detallado en `docs/promt   estructura` y demuestra la implementación efectiva de la propuesta.
+
+---
+
+<!-- Fin del informe adicional -->
+
+---
+
+## 🧩 Informe Adicional: Header Sticky y Navegación
+
+**Fecha**: 22/02/2026  
+**Objetivo**: Crear un header fijo con logo, menú responsive y secciones resaltadas en scroll.
+
+### Ajustes realizados
+
+- **HTML**: Se añadió `<header class="site-header">` sobre el hero. Contiene logo, botón hamburguesa y `<nav>` con enlaces a `#hero`, `#servicios`, `#clientes`, `#proyectos` y `#contacto`.
+- **CSS**: Se extendió `_components.css` para incluir estilos del toggle (`.nav-toggle`, `.hamburger`), menú móvil (`.primary-nav.open`) y media queries. Se mantuvieron variables de `theme.css` para colores y espaciado.
+- **JS**: En `main.js` se implementó:
+  - Alternancia de menú en mobile (`nav-toggle` + `.primary-nav.open`).
+  - Observador para resaltar enlace activo según la sección en vista (`IntersectionObserver`).
+
+### Resultado
+El header se comporta como en el sitio de referencia:
+
+- Fijo en la parte superior con fondo semitransparente y blur.
+- Menú colapsable en pantallas pequeñas.
+- Scroll suave y anclas funcionando.
+- Enlace activo se actualiza al hacer scroll o pulsar un ítem.
+
+### Verificación
+- [x] Sticky header sin desplazarse
+- [x] Toggle abre/cierra menú mobile
+- [x] Enlaces se resaltan correctamente
+- [x] Scroll-behavior cross-browser
+
+---
+
+<!-- Fin del informe de header -->

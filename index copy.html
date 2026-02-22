@@ -22,6 +22,25 @@
   <body>
     <a href="#main" class="skip-link">Saltar al contenido</a>
 
+    <!-- Site Header -->
+    <header class="site-header">
+      <div class="container header-content">
+        <a href="#hero" class="logo">ROMINA&nbsp;MENDIETA</a>
+        <button class="nav-toggle" aria-expanded="false" aria-label="Abrir menú">
+          <span class="hamburger"></span>
+        </button>
+        <nav id="primary-nav" class="primary-nav">
+          <ul>
+            <li><a href="#hero" class="nav-link active">Inicio</a></li>
+            <li><a href="#servicios" class="nav-link">Servicios</a></li>
+            <li><a href="#clientes" class="nav-link">Clientes</a></li>
+            <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
+            <li><a href="#contacto" class="nav-link">Contacto</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
     <!-- Hero Section -->
     <div class="hero">
       <!-- Video de fondo -->
@@ -40,12 +59,124 @@
       <div class="hero-content">
         <h1>ROMINA MENDIETA</h1>
         <p>Historias visuales que cobran vida<br />Portfolio de Ilustración</p>
+        <a href="#servicios" class="hero__cta">Explora servicios</a>
         <div class="scroll-indicator">↓ Scroll para descubrir mi trabajo ↓</div>
       </div>
     </div>
 
     <!-- Main Content -->
     <main id="main">
+      <!-- Servicios Section -->
+      <section class="servicios" id="servicios" data-observe>
+        <h2 class="servicios__heading">Servicios</h2>
+        <div class="servicios__grid">
+          <article class="servicio">
+            <h3 class="servicio__titulo">Ilustración Editorial</h3>
+            <p class="servicio__desc">
+              Imágenes para revistas, libros y medios digitales.
+            </p>
+          </article>
+          <article class="servicio">
+            <h3 class="servicio__titulo">Branding</h3>
+            <p class="servicio__desc">
+              Identidades visuales creativas y memorables.
+            </p>
+          </article>
+          <article class="servicio">
+            <h3 class="servicio__titulo">Digital</h3>
+            <p class="servicio__desc">
+              Arte para videojuegos, animación e interfaces.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Clientes Section -->
+      <section class="clientes" id="clientes" data-observe>
+        <h2 class="clientes__heading">Clientes</h2>
+        <div class="clientes__logos">
+          <img
+            src="https://via.placeholder.com/120x60?text=Logo+1"
+            alt="Cliente 1"
+            class="clientes__logo"
+          />
+          <img
+            src="https://via.placeholder.com/120x60?text=Logo+2"
+            alt="Cliente 2"
+            class="clientes__logo"
+          />
+          <img
+            src="https://via.placeholder.com/120x60?text=Logo+3"
+            alt="Cliente 3"
+            class="clientes__logo"
+          />
+          <img
+            src="https://via.placeholder.com/120x60?text=Logo+4"
+            alt="Cliente 4"
+            class="clientes__logo"
+          />
+        </div>
+      </section>
+
+      <!-- Proyectos Section -->
+      <section class="proyectos" id="proyectos" data-observe>
+        <h2 class="proyectos__heading">Proyectos</h2>
+        <div class="proyectos__list">
+          <article class="proyecto">
+            <img
+              src="https://via.placeholder.com/400x300?text=Proyecto+1"
+              alt="Proyecto 1"
+              class="proyecto__img"
+            />
+            <h3 class="proyecto__title">Proyecto Uno</h3>
+            <p class="proyecto__desc">Descripción breve del proyecto uno.</p>
+          </article>
+          <article class="proyecto">
+            <img
+              src="https://via.placeholder.com/400x300?text=Proyecto+2"
+              alt="Proyecto 2"
+              class="proyecto__img"
+            />
+            <h3 class="proyecto__title">Proyecto Dos</h3>
+            <p class="proyecto__desc">Descripción breve del proyecto dos.</p>
+          </article>
+          <article class="proyecto">
+            <img
+              src="https://via.placeholder.com/400x300?text=Proyecto+3"
+              alt="Proyecto 3"
+              class="proyecto__img"
+            />
+            <h3 class="proyecto__title">Proyecto Tres</h3>
+            <p class="proyecto__desc">Descripción breve del proyecto tres.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Contacto Section -->
+      <section class="contacto" id="contacto" data-observe>
+        <h2 class="contacto__heading">Contacto</h2>
+        <form class="contacto__form">
+          <input
+            type="text"
+            name="nombre"
+            placeholder="Nombre"
+            class="contacto__input"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            class="contacto__input"
+          />
+          <textarea
+            name="mensaje"
+            placeholder="Mensaje"
+            class="contacto__textarea"
+          ></textarea>
+          <button type="submit" class="contacto__btn">Enviar</button>
+        </form>
+      </section>
+
       <!-- Chapter 1: About Me -->
       <section class="story-section chapter-1" data-observe>
         <div class="story-content">

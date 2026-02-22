@@ -95,6 +95,39 @@ if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
   console.log("Reduced motion preference detected - animations disabled");
 }
 
+// ===== NAVIGATION INTERACTIONS =====
+// Toggle mobile menu and highlight active section
+
+const navToggle = document.querySelector(".nav-toggle");
+const primaryNav = document.getElementById("primary-nav");
+const navLinks = document.querySelectorAll(".nav-link");
+
+if (navToggle && primaryNav) {
+  navToggle.addEventListener("click", () => {
+    const expanded = navToggle.getAttribute("aria-expanded") === "true";
+    navToggle.setAttribute("aria-expanded", String(!expanded));
+    primaryNav.classList.toggle("open");
+  });
+}
+
+// highlight link of section in view using IntersectionObserver
+const sections = document.querySelectorAll("section[id]");
+const linkObserverOptions = {
+  rootMargin: "0px 0px -60% 0px", // trigger when section crosses 40% top
+  threshold: 0,
+};
+const linkObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    const id = entry.target.getAttribute("id");
+    const link = document.querySelector(`.nav-link[href="#${id}"]`);
+    if (entry.isIntersecting) {
+      navLinks.forEach((l) => l.classList.remove("active"));
+      if (link) link.classList.add("active");
+    }
+  });
+}, linkObserverOptions);
+sections.forEach((sec) => linkObserver.observe(sec));
+
 // ===== WORK CAROUSEL - SCROLL SNAP (Estilo Framer) =====
 // Sincronizar indicadores con scroll position
 
