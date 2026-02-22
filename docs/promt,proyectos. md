@@ -1,0 +1,18 @@
+/PROMPT:
+
+realiza el plan de implementacion para:
+
+Genera la sección de “Proyectos” con mini-cards de proyecto:
+Dales un título, imagen y subtítulo.
+
+Necesito:
+✔️ Grid de 3 columnas
+✔️ efecto hover con overlay
+✔️ botón “Ver más”
+✔️ responsive
+
+Incluye:
+✔️ HTML
+✔️ CSS
+
+escribe el plan en un documento de docs,  no lo implementes hasta aprobarlo.
