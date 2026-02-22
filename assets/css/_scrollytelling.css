@@ -1086,3 +1086,192 @@
     align-self: center;
   }
 }
+
+/* ===== PROYECTOS HORIZONTAL SCROLL (GSAP ScrollTrigger) ===== */
+
+.proyectos-horizontal {
+  padding: var(--space-4xl) 0;
+  overflow: hidden;
+}
+
+.proyectos-wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-primary-dark) 100%
+  );
+}
+
+.proyectos-title {
+  font-size: var(--font-size-4xl);
+  color: white;
+  padding: var(--space-4xl) var(--space-2xl) var(--space-2xl);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: -0.02em;
+}
+
+/* Track: contenedor que hace scroll horizontal */
+.proyectos-track {
+  display: flex;
+  gap: var(--space-lg);
+  padding: 0 var(--space-2xl) var(--space-4xl);
+  will-change: transform;
+}
+
+/* Tarjeta de proyecto */
+.proyecto-card {
+  flex-shrink: 0;
+  width: 500px;
+  height: 400px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(50px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.proyecto-card.animated {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.proyecto-image {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.proyecto-card:hover .proyecto-image {
+  transform: scale(1.05);
+}
+
+.proyecto-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.proyecto-card:hover .proyecto-overlay {
+  opacity: 1;
+}
+
+.btn-view {
+  padding: var(--space-sm) var(--space-lg);
+  background: var(--color-secondary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-base);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.btn-view:hover {
+  transform: scale(1.1);
+}
+
+.proyecto-title {
+  position: absolute;
+  bottom: 60px;
+  left: 20px;
+  right: 20px;
+  font-size: var(--font-size-2xl);
+  color: white;
+  font-weight: var(--font-weight-bold);
+  z-index: 2;
+}
+
+.proyecto-subtitle {
+  position: absolute;
+  bottom: 30px;
+  left: 20px;
+  right: 20px;
+  font-size: var(--font-size-base);
+  color: var(--color-secondary-light);
+  font-weight: var(--font-weight-medium);
+  z-index: 2;
+}
+
+/* Progress bar (opcional) */
+.proyectos-progress {
+  position: absolute;
+  bottom: 20px;
+  left: var(--space-2xl);
+  right: var(--space-2xl);
+  height: 3px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: var(--color-secondary);
+  width: 0%;
+  will-change: width;
+}
+
+/* Responsive: width de tarjeta ajustable */
+@media (max-width: 1200px) {
+  .proyecto-card {
+    width: 400px;
+    height: 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .proyectos-wrapper {
+    height: auto;
+  }
+
+  .proyectos-track {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .proyecto-card {
+    width: 300px;
+    height: 240px;
+    scroll-snap-align: center;
+  }
+
+  .proyecto-title {
+    font-size: var(--font-size-lg);
+    bottom: 50px;
+  }
+
+  .proyecto-subtitle {
+    font-size: var(--font-size-sm);
+    bottom: 25px;
+  }
+}
+
+/* Animación de entrada */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

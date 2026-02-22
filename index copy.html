@@ -135,52 +135,98 @@
         </div>
       </section>
 
-      <!-- Proyectos Section -->
-      <section class="proyectos" id="proyectos" data-observe>
-        <h2 class="proyectos__heading">Proyectos</h2>
-        <div class="proyectos__grid">
-          <article class="proyecto-card">
-            <div
-              class="proyecto-image"
-              style="
-                background-image: url(&quot;https://via.placeholder.com/400x300?text=Proyecto+1&quot;);
-              "
-            >
-              <div class="overlay">
-                <button class="btn ver-mas">Ver más</button>
+      <!-- Proyectos Section: Horizontal Scroll (GSAP ScrollTrigger) -->
+      <section class="proyectos-horizontal" id="proyectos" data-observe>
+        <div class="proyectos-wrapper">
+          <h2 class="proyectos-title">Mis Proyectos</h2>
+
+          <!-- Contenedor que hace scroll horizontal -->
+          <div class="proyectos-track">
+            <!-- Tarjeta 1 -->
+            <article class="proyecto-card">
+              <div
+                class="proyecto-image"
+                style="
+                  background-image: url(&quot;https://via.placeholder.com/500x400?text=Proyecto+1&quot;);
+                "
+              >
+                <div class="proyecto-overlay">
+                  <button class="btn-view">Ver proyecto</button>
+                </div>
               </div>
-            </div>
-            <h3 class="proyecto-title">Proyecto Uno</h3>
-            <p class="proyecto-subtitle">Subtítulo descriptivo Uno.</p>
-          </article>
-          <article class="proyecto-card">
-            <div
-              class="proyecto-image"
-              style="
-                background-image: url(&quot;https://via.placeholder.com/400x300?text=Proyecto+2&quot;);
-              "
-            >
-              <div class="overlay">
-                <button class="btn ver-mas">Ver más</button>
+              <h3 class="proyecto-title">Proyecto Uno</h3>
+              <p class="proyecto-subtitle">Branding y Diseño</p>
+            </article>
+
+            <!-- Tarjeta 2 -->
+            <article class="proyecto-card">
+              <div
+                class="proyecto-image"
+                style="
+                  background-image: url(&quot;https://via.placeholder.com/500x400?text=Proyecto+2&quot;);
+                "
+              >
+                <div class="proyecto-overlay">
+                  <button class="btn-view">Ver proyecto</button>
+                </div>
               </div>
-            </div>
-            <h3 class="proyecto-title">Proyecto Dos</h3>
-            <p class="proyecto-subtitle">Subtítulo descriptivo Dos.</p>
-          </article>
-          <article class="proyecto-card">
-            <div
-              class="proyecto-image"
-              style="
-                background-image: url(&quot;https://via.placeholder.com/400x300?text=Proyecto+3&quot;);
-              "
-            >
-              <div class="overlay">
-                <button class="btn ver-mas">Ver más</button>
+              <h3 class="proyecto-title">Proyecto Dos</h3>
+              <p class="proyecto-subtitle">Ilustración Editorial</p>
+            </article>
+
+            <!-- Tarjeta 3 -->
+            <article class="proyecto-card">
+              <div
+                class="proyecto-image"
+                style="
+                  background-image: url(&quot;https://via.placeholder.com/500x400?text=Proyecto+3&quot;);
+                "
+              >
+                <div class="proyecto-overlay">
+                  <button class="btn-view">Ver proyecto</button>
+                </div>
               </div>
-            </div>
-            <h3 class="proyecto-title">Proyecto Tres</h3>
-            <p class="proyecto-subtitle">Subtítulo descriptivo Tres.</p>
-          </article>
+              <h3 class="proyecto-title">Proyecto Tres</h3>
+              <p class="proyecto-subtitle">Digital & Motion</p>
+            </article>
+
+            <!-- Tarjeta 4 -->
+            <article class="proyecto-card">
+              <div
+                class="proyecto-image"
+                style="
+                  background-image: url(&quot;https://via.placeholder.com/500x400?text=Proyecto+4&quot;);
+                "
+              >
+                <div class="proyecto-overlay">
+                  <button class="btn-view">Ver proyecto</button>
+                </div>
+              </div>
+              <h3 class="proyecto-title">Proyecto Cuatro</h3>
+              <p class="proyecto-subtitle">Social Media</p>
+            </article>
+
+            <!-- Tarjeta 5 -->
+            <article class="proyecto-card">
+              <div
+                class="proyecto-image"
+                style="
+                  background-image: url(&quot;https://via.placeholder.com/500x400?text=Proyecto+5&quot;);
+                "
+              >
+                <div class="proyecto-overlay">
+                  <button class="btn-view">Ver proyecto</button>
+                </div>
+              </div>
+              <h3 class="proyecto-title">Proyecto Cinco</h3>
+              <p class="proyecto-subtitle">Estrategia Visual</p>
+            </article>
+          </div>
+
+          <!-- Indicador de scroll horizontal (opcional) -->
+          <div class="proyectos-progress">
+            <div class="progress-bar"></div>
+          </div>
         </div>
       </section>
 
@@ -465,6 +511,9 @@
       </div>
     </div>
 
+    <!-- GSAP y ScrollTrigger (para scroll horizontal) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="./assets/js/main.js"></script>
   </body>
 </html>

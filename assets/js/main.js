@@ -253,6 +253,72 @@ function showMessage(text, type) {
   formMessage.className = type;
 }
 
+// ===== HORIZONTAL SCROLL PROYECTOS (GSAP ScrollTrigger) =====
+
+// Registrar ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
+
+// Ejecutar cuando el DOM esté listo
+window.addEventListener("DOMContentLoaded", () => {
+  const proyectos = document.querySelector(".proyectos-horizontal");
+
+  if (!proyectos) return; // Salir si no existe la sección
+
+  const proyectosWrapper = document.querySelector(".proyectos-wrapper");
+  const proyectosTrack = document.querySelector(".proyectos-track");
+  const projectCards = document.querySelectorAll(".proyecto-card");
+  const progressBar = document.querySelector(".progress-bar");
+
+  // Calcular el ancho total del scroll horizontal
+  const trackWidth = proyectosTrack.scrollWidth - proyectosTrack.clientWidth;
+
+  // Animar entrada de tarjetas
+  projectCards.forEach((card, index) => {
+    card.classList.add("animated");
+    card.style.animationDelay = `${index * 0.1}s`;
+  });
+
+  // Animación principal: scroll horizontal con ScrollTrigger
+  gsap.to(proyectosTrack, {
+    x: -trackWidth,
+    duration: 1,
+    scrollTrigger: {
+      trigger: proyectosWrapper,
+      start: "top top",
+      end: `+=${trackWidth + window.innerHeight}`,
+      scrub: 1, // 1 = más suave, 0.5 = más rápido
+      pin: true,
+      markers: false, // Cambiar a true para ver marcadores de debug
+      onUpdate: (self) => {
+        // Actualizar barra de progreso
+        if (progressBar) {
+          progressBar.style.width = `${self.getVelocity() * 0.1 + self.progress * 100}%`;
+        }
+      },
+    },
+    ease: "none", // Sin easing para scroll suave
+  });
+
+  // Efecto hover suave en tarjetas
+  projectCards.forEach((card) => {
+    card.addEventListener("mouseenter", () => {
+      gsap.to(card, {
+        y: -10,
+        duration: 0.3,
+        overwrite: "auto",
+      });
+    });
+
+    card.addEventListener("mouseleave", () => {
+      gsap.to(card, {
+        y: 0,
+        duration: 0.3,
+        overwrite: "auto",
+      });
+    });
+  });
+});
+
 // ===== WORK CAROUSEL - SCROLL SNAP (Estilo Framer) =====
 // Sincronizar indicadores con scroll position
 
