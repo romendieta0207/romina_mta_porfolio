@@ -634,6 +634,7 @@ La estructura del sitio ahora cuenta con bloques claros y accesibles, similares 
   - Observador para resaltar enlace activo según la sección en vista (`IntersectionObserver`).
 
 ### Resultado
+
 El header se comporta como en el sitio de referencia:
 
 - Fijo en la parte superior con fondo semitransparente y blur.
@@ -642,6 +643,7 @@ El header se comporta como en el sitio de referencia:
 - Enlace activo se actualiza al hacer scroll o pulsar un ítem.
 
 ### Verificación
+
 - [x] Sticky header sin desplazarse
 - [x] Toggle abre/cierra menú mobile
 - [x] Enlaces se resaltan correctamente
