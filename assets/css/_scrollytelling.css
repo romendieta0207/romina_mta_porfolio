@@ -927,3 +927,162 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ===== CONTACT FORM SECTION ===== */
+.contacto {
+  padding: var(--space-4xl) var(--space-2xl);
+  background: white;
+}
+
+.contacto__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4xl);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Columna izquierda */
+.contacto__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.contacto__heading {
+  font-size: var(--font-size-4xl);
+  color: var(--color-secondary);
+  font-weight: var(--font-weight-bold);
+}
+
+.contacto__phone {
+  font-size: var(--font-size-xl);
+  color: var(--color-secondary);
+  font-weight: var(--font-weight-bold);
+}
+
+.contacto__text {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-secondary);
+}
+
+.contacto__text a {
+  color: var(--color-secondary);
+  text-decoration: underline;
+}
+
+.contacto__social h3 {
+  font-size: var(--font-size-lg);
+  color: var(--color-secondary);
+  margin-top: var(--space-lg);
+}
+
+/* Formulario */
+.contacto__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: var(--space-md) 0;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid var(--color-secondary);
+  font-family: var(--font-primary);
+  font-size: var(--font-size-base);
+  color: var(--color-secondary);
+  transition: border-color var(--transition-base);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--color-secondary);
+  opacity: 0.7;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-bottom-color: var(--color-primary-dark);
+}
+
+/* Checkbox */
+.checkbox-group {
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--color-secondary);
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.checkbox-group label {
+  font-size: var(--font-size-sm);
+  color: var(--color-secondary);
+  cursor: pointer;
+}
+
+/* Botón */
+.contacto__btn {
+  padding: var(--space-sm) var(--space-xl);
+  background: transparent;
+  border: 2px solid var(--color-secondary);
+  color: var(--color-secondary);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-base);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  align-self: flex-end;
+  text-transform: uppercase;
+}
+
+.contacto__btn:hover {
+  background: var(--color-secondary);
+  color: white;
+}
+
+.form-message {
+  margin-top: var(--space-md);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  text-align: center;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.form-message.success {
+  color: var(--color-success);
+  opacity: 1;
+}
+
+.form-message.error {
+  color: var(--color-error);
+  opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contacto__container {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+
+  .contacto__btn {
+    align-self: center;
+  }
+}

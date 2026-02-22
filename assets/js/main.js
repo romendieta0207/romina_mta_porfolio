@@ -197,6 +197,62 @@ if (acordeonItems.length) {
   });
 }
 
+// ===== CONTACT FORM VALIDATION =====
+const contactForm = document.getElementById("contactForm");
+const formMessage = document.getElementById("formMessage");
+
+if (contactForm) {
+  contactForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const nombre = document.getElementById("nombre").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const mensaje = document.getElementById("mensaje").value.trim();
+    const privacidad = document.getElementById("privacidad").checked;
+
+    // Limpiar mensajes previos
+    formMessage.className = "";
+    formMessage.textContent = "";
+
+    // Validación de nombre
+    if (!nombre) {
+      showMessage("El nombre es obligatorio", "error");
+      return;
+    }
+
+    // Validación de email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email || !emailRegex.test(email)) {
+      showMessage("Ingresa un email válido", "error");
+      return;
+    }
+
+    // Validación de mensaje
+    if (!mensaje) {
+      showMessage("El mensaje no puede estar vacío", "error");
+      return;
+    }
+
+    // Validación de privacidad
+    if (!privacidad) {
+      showMessage("Debes aceptar la Política de Privacidad", "error");
+      return;
+    }
+
+    // Si todo es válido
+    showMessage(
+      "¡Mensaje enviado correctamente! Nos pondremos en contacto pronto.",
+      "success",
+    );
+    contactForm.reset();
+  });
+}
+
+function showMessage(text, type) {
+  formMessage.textContent = text;
+  formMessage.className = type;
+}
+
 // ===== WORK CAROUSEL - SCROLL SNAP (Estilo Framer) =====
 // Sincronizar indicadores con scroll position
 

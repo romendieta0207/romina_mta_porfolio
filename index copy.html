@@ -186,27 +186,72 @@
 
       <!-- Contacto Section -->
       <section class="contacto" id="contacto" data-observe>
-        <h2 class="contacto__heading">Contacto</h2>
-        <form class="contacto__form">
-          <input
-            type="text"
-            name="nombre"
-            placeholder="Nombre"
-            class="contacto__input"
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            class="contacto__input"
-          />
-          <textarea
-            name="mensaje"
-            placeholder="Mensaje"
-            class="contacto__textarea"
-          ></textarea>
-          <button type="submit" class="contacto__btn">Enviar</button>
-        </form>
+        <div class="contacto__container">
+          <!-- Columna Izquierda: Información -->
+          <div class="contacto__info">
+            <h2 class="contacto__heading">Contáctanos</h2>
+            <p class="contacto__phone">(+34) 123 456 789</p>
+            <p class="contacto__text">
+              Siempre que quieras llámanos o escríbenos a
+              <a href="mailto:contacto@example.com">contacto@example.com</a>,
+              acércate y visítanos, o si lo prefieres, rellena el formulario.
+            </p>
+            <div class="contacto__social">
+              <h3>Síguenos</h3>
+              <p>Puedes seguirnos y ver lo que hacemos.</p>
+            </div>
+          </div>
+
+          <!-- Columna Derecha: Formulario -->
+          <div class="contacto__form-wrapper">
+            <form class="contacto__form" id="contactForm">
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="nombre"
+                  name="nombre"
+                  placeholder="Nombre *"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Email *"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <textarea
+                  id="mensaje"
+                  name="mensaje"
+                  placeholder="Tu mensaje *"
+                  rows="6"
+                  required
+                ></textarea>
+              </div>
+
+              <div class="form-group checkbox-group">
+                <input
+                  type="checkbox"
+                  id="privacidad"
+                  name="privacidad"
+                  required
+                />
+                <label for="privacidad"
+                  >He leído y acepto la Política de Privacidad.</label
+                >
+              </div>
+
+              <button type="submit" class="contacto__btn">Enviar</button>
+              <div class="form-message" id="formMessage"></div>
+            </form>
+          </div>
+        </div>
       </section>
 
       <!-- Chapter 1: About Me -->
