@@ -75,111 +75,157 @@
     bounce 2s ease-in-out 1.6s infinite;
 }
 
-/* ===== CATEGORÍAS GRID (Estilo Framer) ===== */
-.categories-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+/* ===== WORK CAROUSEL - SCROLL SNAP (Estilo Framer) ===== */
+
+/* Contenedor principal - Scroll Snap */
+.work-carousel {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
   margin: 3rem 0;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
-.category-card {
-  padding: 2rem;
-  border: 1px solid var(--color-border-light);
-  border-radius: 12px;
-  transition: all 0.3s ease;
+/* Ocultar scrollbar pero mantener funcionalidad */
+.work-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.work-carousel {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Cada slide llena toda la sección */
+.work-slide {
+  width: 100%;
+  height: 100vh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 3rem;
   position: relative;
   overflow: hidden;
-  opacity: 0;
-  transform: translateY(30px);
 }
 
-.category-card:nth-child(1) {
-  animation: fadeInUp 0.6s ease 0.2s forwards;
+/* Colores de fondo para cada slide */
+.work-slide[data-slide="1"] {
+  background-color: #d23f57;
 }
 
-.category-card:nth-child(2) {
-  animation: fadeInUp 0.6s ease 0.4s forwards;
+.work-slide[data-slide="2"] {
+  background-color: #f6bc3f;
 }
 
-.category-card:nth-child(3) {
-  animation: fadeInUp 0.6s ease 0.6s forwards;
+.work-slide[data-slide="3"] {
+  background-color: #679cbc;
 }
 
-/* Efecto hover */
-.category-card:hover {
-  border-color: var(--color-primary);
-  transform: translateY(-8px);
-  box-shadow: 0 10px 30px rgba(11, 50, 73, 0.15);
+/* Contenido del slide */
+.work-content {
+  text-align: center;
+  z-index: 2;
+  animation: slideInContent 0.8s ease-out;
+  max-width: 600px;
 }
 
-/* Número del badge */
-.category-number {
-  font-size: 3rem;
+/* Número grande */
+.work-number {
+  font-size: 8rem;
   font-weight: 700;
-  color: var(--color-primary-light);
-  opacity: 0.3;
+  opacity: 0.15;
   margin-bottom: 1rem;
   font-family: var(--font-family-heading);
+  line-height: 1;
 }
 
-/* Título de categoría */
-.category-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: var(--color-text-primary);
-  transition: color 0.3s ease;
-}
-
-.category-card:hover h3 {
-  color: var(--color-primary);
+/* Título */
+.work-content h3 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  color: white;
+  line-height: 1.2;
 }
 
 /* Descripción */
-.category-card p {
-  color: var(--color-text-secondary);
-  line-height: var(--line-height-relaxed);
-  margin-bottom: 1.5rem;
+.work-content p {
+  font-size: 1.5rem;
+  opacity: 0.95;
+  color: white;
+  line-height: 1.6;
 }
 
-/* Link "Ver proyectos" */
-.category-link {
-  display: inline-block;
-  color: var(--color-primary);
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
+/* Indicadores de progreso */
+.work-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
   position: relative;
+  z-index: 10;
 }
 
-.category-link::after {
-  content: '';
-  position: absolute;
-  bottom: -3px;
-  left: 0;
-  width: 0;
-  height: 2px;
+.work-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--color-border-medium);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.work-indicator.active {
   background: var(--color-primary);
-  transition: width 0.3s ease;
+  width: 30px;
+  border-radius: 6px;
 }
 
-.category-link:hover::after {
-  width: 100%;
+/* Animación de entrada */
+@keyframes slideInContent {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .categories-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+  .work-carousel {
+    min-height: 80vh;
+    margin: 2rem 0;
   }
 
-  .category-number {
-    font-size: 2.5rem;
+  .work-slide {
+    height: 80vh;
+    padding: 2rem 1rem;
   }
 
-  .category-card h3 {
-    font-size: 1.25rem;
+  .work-number {
+    font-size: 4rem;
+  }
+
+  .work-content h3 {
+    font-size: 2rem;
+  }
+
+  .work-content p {
+    font-size: 1.125rem;
+  }
+
+  .work-content {
+    max-width: 90%;
   }
 }
 

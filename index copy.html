@@ -85,47 +85,69 @@
         <div class="parallax-content">
           <h3>El Arte de Contar Historias Visuales</h3>
           <p class="text-large">Cada trazo tiene un propósito</p>
-           <div class="scroll-indicator">↓ Scroll para descubrir mi trabajo ↓</div>
+          <div class="scroll-indicator">
+            ↓ Scroll para descubrir mi trabajo ↓
+          </div>
         </div>
       </div>
 
-      <!-- Chapter 2: My Work -->
-      <section class="story-section chapter-2" data-observe>
+      <!-- Chapter 2: My Work - Scroll Snap Carousel -->
+      <section class="story-section chapter-2" id="workSection" data-observe>
         <div class="story-content">
           <h2>Mi Trabajo</h2>
-          <p class="text-large mb-lg">Me especializo en varias áreas de ilustración:</p>
+          <p class="text-large mb-lg">
+            Me especializo en varias áreas de ilustración:
+          </p>
 
-          <!-- Grid de categorías -->
-          <div class="categories-grid">
-            
-            <!-- Categoría 1 -->
-            <div class="category-card">
-              <div class="category-number">01</div>
-              <h3>Editorial</h3>
-              <p>Ilustraciones para revistas, libros y publicaciones digitales que capturan la esencia de cada historia.</p>
-              <a href="#" class="category-link">Ver proyectos →</a>
+          <!-- Work Carousel - Scroll Snap -->
+          <div class="work-carousel" id="workCarousel">
+            <!-- Slide 1: Editorial -->
+            <div class="work-slide" data-slide="1">
+              <div class="work-content">
+                <div class="work-number">01</div>
+                <h3>Editorial</h3>
+                <p>
+                  Ilustraciones para revistas, libros y publicaciones digitales
+                  que capturan la esencia de cada historia.
+                </p>
+              </div>
             </div>
 
-            <!-- Categoría 2 -->
-            <div class="category-card">
-              <div class="category-number">02</div>
-              <h3>Branding</h3>
-              <p>Identidades visuales únicas que ayudan a las marcas a conectar emocionalmente con su audiencia.</p>
-              <a href="#" class="category-link">Ver proyectos →</a>
+            <!-- Slide 2: Branding -->
+            <div class="work-slide" data-slide="2">
+              <div class="work-content">
+                <div class="work-number">02</div>
+                <h3>Branding</h3>
+                <p>
+                  Identidades visuales únicas que ayudan a las marcas a conectar
+                  emocionalmente con su audiencia.
+                </p>
+              </div>
             </div>
 
-            <!-- Categoría 3 -->
-            <div class="category-card">
-              <div class="category-number">03</div>
-              <h3>Digital</h3>
-              <p>Arte conceptual y diseño de personajes para videojuegos, animación y medios interactivos.</p>
-              <a href="#" class="category-link">Ver proyectos →</a>
+            <!-- Slide 3: Digital -->
+            <div class="work-slide" data-slide="3">
+              <div class="work-content">
+                <div class="work-number">03</div>
+                <h3>Digital</h3>
+                <p>
+                  Arte conceptual y diseño de personajes para videojuegos,
+                  animación y medios interactivos.
+                </p>
+              </div>
             </div>
-
           </div>
 
-          <p class="mt-lg">
-            Cada proyecto es una oportunidad para explorar nuevas técnicas y estilos visuales.
+          <!-- Progress Indicators -->
+          <div class="work-indicators">
+            <span class="work-indicator active" data-slide="1"></span>
+            <span class="work-indicator" data-slide="2"></span>
+            <span class="work-indicator" data-slide="3"></span>
+          </div>
+
+          <p class="mt-lg text-center">
+            Cada proyecto es una oportunidad para explorar nuevas técnicas y
+            estilos visuales.
           </p>
         </div>
       </section>

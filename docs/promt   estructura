@@ -1,0 +1,167 @@
+# Plan de Estructura de Sitio Web
+
+Este documento presenta un plan detallado para construir un sitio inspirado en **Spicy Agencia Creativa** (https://spicyagenciacreativa.com/). La organización se divide en cinco secciones principales: Hero, Servicios, Clientes, Proyectos y Contacto. Está diseñado para ser **responsive** y **fluido en scroll**, aprovechando información de los archivos `project-inspiration.md`, `bio.md` y `hero-lema.md`.
+
+---
+
+## 1. Hero
+
+### HTML Sugerido
+```html
+<header class="hero" id="hero">
+  <div class="hero__container">
+    <h1 class="hero__title">[Lema / tu nombre]</h1>
+    <p class="hero__subtitle">[Breve frase o tagline de bio]</p>
+    <a href="#servicios" class="hero__cta">Descubre más</a>
+  </div>
+</header>
+```
+
+### Descripción
+Una primera pantalla a pantalla completa con un fondo dinámico o video sutil. Contiene título, subtítulo y un botón de llamada a la acción.
+
+### Interacciones
+- Animación de aparición en fade-in para el texto y botón.
+- Efecto parallax o desenfoque leve al hacer scroll.
+- El botón hace scroll suave hacia la sección `#servicios` (script de scroll-behavior, similar a scrhollyng).
+
+### Clases CSS
+- `hero`, `hero__container`, `hero__title`, `hero__subtitle`, `hero__cta`
+
+### Scrollying
+Configurar un disparador con librería de scroll (e.g., ScrollTrigger/GSAP) para iniciar animaciones de contenido cuando el hero sale de la vista.
+
+---
+
+## 2. Servicios
+
+### HTML Sugerido
+```html
+<section class="servicios" id="servicios">
+  <div class="servicios__grid">
+    <article class="servicio">
+      <h2 class="servicio__titulo">Servicio 1</h2>
+      <p class="servicio__desc">Descripción corta.</p>
+    </article>
+    <!-- repetir por cada servicio -->
+  </div>
+</section>
+```
+
+### Descripción
+Listado de los servicios ofrecidos con iconos o ilustraciones, dispuestos en un grid fluido.
+
+### Interacciones
+- Hover con elevación y cambio de color en cada `article.servicio`.
+- Scroll suave para revelar los tarjetas desde abajo con fade-in.
+
+### Clases CSS
+- `servicios`, `servicios__grid`, `servicio`, `servicio__titulo`, `servicio__desc`
+
+### Scrollying
+Usar un trigger para animar cada tarjeta cuando entra en el viewport (e.g., `scrhollyng` para efecto de slide y fade).
+
+---
+
+## 3. Clientes
+
+### HTML Sugerido
+```html
+<section class="clientes" id="clientes">
+  <h2 class="clientes__heading">Clientes</h2>
+  <div class="clientes__logos">
+    <img src="logo1.png" alt="Cliente1" class="clientes__logo" />
+    <!-- más logos -->
+  </div>
+</section>
+```
+
+### Descripción
+Mosaico o carrusel de logos de clientes/colaboradores. Puede ser estilo marquee o grid.
+
+### Interacciones
+- Efecto de desplazamiento continuo horizontal o aparición en cascada con scroll.
+- Logos con ligero zoom en hover.
+
+### Clases CSS
+- `clientes`, `clientes__heading`, `clientes__logos`, `clientes__logo`
+
+### Scrollying
+Animar aparición de la fila de logos cuando la sección se acerca, usando scrhollyng para horizontal scroll o fade.
+
+---
+
+## 4. Proyectos
+
+### HTML Sugerido
+```html
+<section class="proyectos" id="proyectos">
+  <h2 class="proyectos__heading">Proyectos</h2>
+  <div class="proyectos__list">
+    <article class="proyecto">
+      <img src="proyecto1.jpg" alt="Proyecto 1" class="proyecto__img" />
+      <h3 class="proyecto__title">Título del proyecto</h3>
+      <p class="proyecto__desc">Descripción breve.</p>
+    </article>
+    <!-- repetir -->
+  </div>
+</section>
+```
+
+### Descripción
+Galería de trabajos recientes con imágenes representativas, texto superpuesto o debajo.
+
+### Interacciones
+- Hover sobre cada tarjeta revela detalles o enlace.
+- Scroll parallax de fondo o transición en vertical.
+
+### Clases CSS
+- `proyectos`, `proyectos__heading`, `proyectos__list`, `proyecto`, `proyecto__img`, `proyecto__title`, `proyecto__desc`
+
+### Scrollying
+Al hacer scroll, las imágenes pueden moverse a distinta velocidad (parallax) y las fichas se animan desde abajo.
+
+---
+
+## 5. Contacto
+
+### HTML Sugerido
+```html
+<section class="contacto" id="contacto">
+  <h2 class="contacto__heading">Contacto</h2>
+  <form class="contacto__form">
+    <input type="text" name="nombre" placeholder="Nombre" class="contacto__input" />
+    <input type="email" name="email" placeholder="Email" class="contacto__input" />
+    <textarea name="mensaje" placeholder="Mensaje" class="contacto__textarea"></textarea>
+    <button type="submit" class="contacto__btn">Enviar</button>
+  </form>
+</section>
+```
+
+### Descripción
+Formulario de contacto sencillo acompañado de un mapa o enlaces a redes.
+
+### Interacciones
+- Validación en tiempo real.
+- Animaciones de entrada de campos.
+- Iconos sociales con hover.
+
+### Clases CSS
+- `contacto`, `contacto__heading`, `contacto__form`, `contacto__input`, `contacto__textarea`, `contacto__btn`
+
+### Scrollying
+Formulario se eleva con fade-in al entrar en el viewport. Añadir ancla para `#contacto` desde cualquier CTA.
+
+---
+
+## Consideraciones generales
+
+- **Responsive:** grids flexibles, media queries, unidades relativas.
+- **CSS:** prefijo BEM-like para clases; usar variables de `theme.css`.
+- **Scroll fluido:** `html {scroll-behavior: smooth;}` y uso de librerías (ScrollTrigger, lo que refiere scrhollyng).
+- **Animaciones:** combinar CSS y JS; priorizar rendimiento móvil.
+- **Fuentes del contenido:** integrar textos de `bio.md`, estilo del lema de `hero-lema.md` y referencias de `project-inspiration.md`.
+
+---
+
+Este plan puede servirse como guía de desarrollo y se puede detallar con los datos específicos del portafolio que se desea mostrar.
