@@ -15,9 +15,9 @@
   /* ===== COLOR SYSTEM ===== */
   /* Primary brand colors - Ultramarine Blue (Romina's palette) */
   --color-primary: #0b3249;
-  --color-primary-hover: #082540;
+  --color-primary-hover: #d23f57;
   --color-primary-light: #d23f57;
-  --color-primary-dark: #051d31;
+  --color-primary-dark: #679cbc;
 
   /* Neutral colors for text and backgrounds */
   --color-text-primary: #0f172a;

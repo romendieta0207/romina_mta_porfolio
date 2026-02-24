@@ -21,28 +21,28 @@
 /* Video de fondo */
 .hero-video {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 0%;
+  left: 0px;
   width: 100%;
   height: 100%;
   object-fit: cover;
   z-index: 1;
 }
 
-/* Oscuridad sobre el video (mejora legibilidad) */
+/* Contenido encima del video */
+
 .hero-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 2;
 }
 
-/* Contenido encima del video */
 .hero-content {
-  position: relative;
+  position: center;
   z-index: 3;
 }
 
@@ -81,7 +81,7 @@
 
 /* Parallax/scroll effect for hero content */
 .hero-content {
-  transition: transform 0.2s ease-out;
+  transition: transform 0.3s ease-out;
 }
 
 /* Hero scroll state: reduce scale when user scrolls down */
@@ -109,7 +109,7 @@
 .hero p {
   font-size: var(--font-size-lg);
   color: rgba(255, 255, 255, 0.9);
-  max-width: 600px;
+  max-width: 400px;
   margin: 0 auto var(--space-xl);
   opacity: 0;
   transform: translateY(30px);
@@ -500,7 +500,7 @@
 .contacto__btn {
   padding: var(--space-sm) var(--space-lg);
   background: var(--color-primary);
-  color: white;
+  color: rgb(218, 41, 41);
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -809,27 +809,28 @@
 .servicios-acordeon {
   max-width: 800px;
   margin: 0 auto;
-  padding: var(--space-4xl) var(--space-2xl);
+  padding: var(--space-sm) var(--space-2xl);
 }
 
 /* Cabecera principal como H1 */
 .servicios-header h1 {
-  font-size: var(--font-size-4xl);
+  font-size: var(--font-size-3xl);
   text-align: center;
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-md);
+  color: var(--color-secondary);
 }
 
 .acordeon-item {
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 10px solid var(--color-border);
 }
 
 .acordeon-header {
   width: 100%;
-  text-align: left;
+  text-align: center;
   padding: var(--space-md) var(--space-lg);
   background: var(--color-gray-100);
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
   cursor: pointer;
   transition: background var(--transition-base);
 }
@@ -837,7 +838,7 @@
   background: var(--color-primary-light);
 }
 .acordeon-header.active {
-  background: var(--color-primary);
+  background: #679cf5;
   color: var(--color-white);
 }
 
@@ -851,12 +852,13 @@
 .acordeon-body.open {
   max-height: 200px;
   padding: var(--space-md) var(--space-lg);
+  position: ele;
 }
 
 @media (max-width: 768px) {
   .acordeon-header {
-    font-size: var(--font-size-base);
-    padding: var(--space-sm) var(--space-md);
+    font-size: var(--font-size-xl);
+    padding: var(--space-xl) var(--space-md);
   }
 }
 
@@ -908,13 +910,13 @@
   cursor: pointer;
 }
 .proyecto-title {
-  margin: var(--space-md) 0 var(--space-xs);
+  margin: var(--space-md) 0 var(--space-md);
   font-size: var(--font-size-xl);
 }
 .proyecto-subtitle {
   font-size: var(--font-size-md);
   color: var(--color-text-secondary);
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-xl);
 }
 
 @media (max-width: 992px) {
@@ -931,7 +933,7 @@
 /* ===== CONTACT FORM SECTION ===== */
 .contacto {
   padding: var(--space-4xl) var(--space-2xl);
-  background: white;
+  background: #0b3249;
 }
 
 .contacto__container {
@@ -1099,11 +1101,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  background: linear-gradient(
-    135deg,
-    var(--color-primary) 0%,
-    var(--color-primary-dark) 100%
-  );
+  background: #0f172a;
 }
 
 .proyectos-title {
@@ -1131,9 +1129,10 @@
   overflow: hidden;
   position: relative;
   cursor: pointer;
-  opacity: 0;
+  opacity: 1;
   transform: translateY(50px);
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  overlay: auto;
 }
 
 .proyecto-card.animated {
@@ -1180,19 +1179,20 @@
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-base);
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .btn-view:hover {
+  background: var(--color-secondary-dark);
   transform: scale(1.1);
 }
 
 .proyecto-title {
   position: absolute;
-  bottom: 60px;
+  bottom: 70px;
   left: 20px;
   right: 20px;
-  font-size: var(--font-size-2xl);
+  font-size: var(--font-size-xl);
   color: white;
   font-weight: var(--font-weight-bold);
   z-index: 2;
@@ -1200,7 +1200,7 @@
 
 .proyecto-subtitle {
   position: absolute;
-  bottom: 30px;
+  bottom: 20px;
   left: 20px;
   right: 20px;
   font-size: var(--font-size-base);
@@ -1232,7 +1232,7 @@
 @media (max-width: 1200px) {
   .proyecto-card {
     width: 400px;
-    height: 320px;
+    height: 420px;
   }
 }
 
@@ -1248,14 +1248,14 @@
   }
 
   .proyecto-card {
-    width: 300px;
+    width: 500px;
     height: 240px;
     scroll-snap-align: center;
   }
 
   .proyecto-title {
-    font-size: var(--font-size-lg);
-    bottom: 50px;
+    font-size: var(--font-size-md);
+    bottom: 60px;
   }
 
   .proyecto-subtitle {
@@ -1318,8 +1318,8 @@
   position: absolute;
   top: 20px;
   left: 30px;
-  width: 320px;
-  height: 380px;
+  width: 520px;
+  height: 500px;
   background: white;
   padding: 16px;
   border-radius: 8px;
