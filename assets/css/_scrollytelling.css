@@ -1559,6 +1559,23 @@
     transform: translateY(0);
   }
 }
+/* ===== FOOTER ===== */
+.footer {
+  background: rgba(15, 23, 42, 0.95);
+  border-top: 1px solid var(--color-border-light);
+  padding: var(--space-3xl) var(--container-padding);
+  text-align: center;
+}
+
+.footer-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.footer-copyright {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: var(--font-size-sm);
+}
 
 /* Integración con existente data-observe */
 /* La clase .visible se añade automáticamente por IntersectionObserver */
