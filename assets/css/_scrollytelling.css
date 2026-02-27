@@ -348,11 +348,11 @@
 
 /* ===== CHAPTER THEMES ===== */
 .chapter-1 {
-  background: var(--gradient-chapter-1);
+  background: var(--gradient-chapter-2);
 }
 
 .chapter-1 h2 {
-  color: var(--color-accent-blue);
+  color: white;
   font-size: var(--font-size-3xl);
   margin-bottom: var(--space-md);
 }
@@ -568,7 +568,8 @@
 /* ===== PARALLAX SECTION ===== */
 .parallax-section {
   height: 60vh;
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23667eea;stop-opacity:1" /><stop offset="100%" style="stop-color:%23764ba2;stop-opacity:1" /></linearGradient></defs><rect fill="url(%23grad)" width="1200" height="600"/><circle cx="600" cy="300" r="200" fill="white" opacity="0.1"/><circle cx="300" cy="400" r="150" fill="white" opacity="0.05"/><circle cx="900" cy="200" r="180" fill="white" opacity="0.08"/></svg>');
+  /* use the provided hero image as the background; keep fixed attachment for parallax effect */
+  background-image: url('https://ik.imagekit.io/romendieta0207/images/WOS%20_AFICHE.jpg?updatedAt=1770578461520');
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
@@ -693,7 +694,7 @@
 }
 
 .timeline-content {
-  background: var(--color-card-bg);
+  background: var(--color-primary);
   padding: var(--space-lg);
   border-radius: var(--radius-md);
   flex: 1;
@@ -701,7 +702,7 @@
 }
 
 .timeline-content h4 {
-  color: var(--color-accent-blue);
+  color: var(--color-warning);
   margin-bottom: var(--space-sm);
 }
 
@@ -810,6 +811,36 @@
   max-width: 800px;
   margin: 0 auto;
   padding: var(--space-sm) var(--space-2xl);
+  /* grid wrapper to allow 2‑column layout on wider screens */
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+/* header should span all columns */
+.servicios-acordeon .servicios-header {
+  grid-column: 1 / -1;
+}
+
+/* desktop: two columns */
+@media (min-width: 1024px) {
+  .servicios-acordeon {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* tablet keeps two columns if space allows (same as desktop) */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .servicios-acordeon {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* mobile: single column */
+@media (max-width: 768px) {
+  .servicios-acordeon {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Cabecera principal como H1 */

@@ -10,11 +10,17 @@ Este documento describe la implementación de la sección "Servicios" como un co
    - Se reemplazó el diseño en grid anterior por la estructura acordeón dentro de `index copy.html`.
    - El título "Servicios" ahora está envuelto en un `div.servicios-header` y utiliza un `h1` (tipografía principal).
    - Añadidos cuatro items (`Ilustración`, `Branding`, `Editorial`, `Social Media`) con botón de cabecera y cuerpo descriptivo.
+   - Se corrigieron etiquetas abiertas/ cerradas para cada `.acordeon-item` y se aseguró que el HTML sea válido.
    - El contenedor mantiene la clase `servicios-acordeon` y el atributo `data-observe` para animaciones.
+   - **Nueva disposición:** `.servicios-acordeon` ahora actúa como grid wrapper; el encabezado ocupa toda la anchura y los ítems fluyen en dos columnas en escritorio.
 
 2. **CSS** (`assets/css/_scrollytelling.css`)
    - Agregadas reglas al final del fichero para el acordeón: `.servicios-acordeon`, `.acordeon-item`, `.acordeon-header`, `.acordeon-body`, estados `active` y `open`.
    - Añadido estilo para `.servicios-header h1` con tipografía H1 centrada y margen inferior.
+   - **Nuevas reglas de grid y media queries:**
+     - `.servicios-acordeon` utiliza `display: grid` con `gap` para mantener tarjetas en dos columnas en pantallas ≥1024px.
+     - El encabezado usa `grid-column: 1 / -1` para abarcar ambas columnas.
+     - Media queries adaptan el layout: dos columnas en tablet (>768px), una columna en móvil (≤768px).
    - Utilización de variables de `assets/css/_variables.css` para colores, espaciado y transiciones.
    - Inclusión de media query para tipografía y padding en móviles.
 
