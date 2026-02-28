@@ -261,7 +261,6 @@ gsap.registerPlugin(ScrollTrigger);
 // Ejecutar cuando el DOM esté listo
 window.addEventListener("DOMContentLoaded", () => {
   const proyectos = document.querySelector(".proyectos-horizontal");
-
   if (!proyectos) return; // Salir si no existe la sección
 
   const proyectosWrapper = document.querySelector(".proyectos-wrapper");
@@ -269,54 +268,125 @@ window.addEventListener("DOMContentLoaded", () => {
   const projectCards = document.querySelectorAll(".proyecto-card");
   const progressBar = document.querySelector(".progress-bar");
 
-  // Calcular el ancho total del scroll horizontal
-  const trackWidth = proyectosTrack.scrollWidth - proyectosTrack.clientWidth;
-
-  // Animar entrada de tarjetas
+  // Animar entrada de tarjetas (clase CSS + delay)
   projectCards.forEach((card, index) => {
     card.classList.add("animated");
     card.style.animationDelay = `${index * 0.1}s`;
   });
 
-  // Animación principal: scroll horizontal con ScrollTrigger
-  gsap.to(proyectosTrack, {
-    x: -trackWidth,
-    duration: 1,
-    scrollTrigger: {
-      trigger: proyectosWrapper,
-      start: "top top",
-      end: `+=${trackWidth + window.innerHeight}`,
-      scrub: 1, // 1 = más suave, 0.5 = más rápido
-      pin: true,
-      markers: false, // Cambiar a true para ver marcadores de debug
-      onUpdate: (self) => {
-        // Actualizar barra de progreso
-        if (progressBar) {
-          progressBar.style.width = `${self.getVelocity() * 0.1 + self.progress * 100}%`;
-        }
+  // Use gsap.matchMedia to scope animations per breakpoint and automatically
+  // revert/kill when changing between desktop/mobile. This avoids duplicated
+  // ScrollTrigger instances and ensures clean teardown.
+  const mm = gsap.matchMedia();
+
+  // Desktop & large tablets: enable horizontal pinned scroll
+  mm.add({ isDesktop: "(min-width: 769px)" }, (context) => {
+    // calculate track width on runtime (recalculate on refresh)
+    const calcTrackWidth = () =>
+      proyectosTrack.scrollWidth - proyectosTrack.clientWidth;
+    let trackWidth = calcTrackWidth();
+
+    // Create the horizontal scroll animation
+    const horizontalTween = gsap.to(proyectosTrack, {
+      x: () => -calcTrackWidth(),
+      ease: "none",
+      scrollTrigger: {
+        trigger: proyectosWrapper,
+        start: "top top",
+        end: () => `+=${calcTrackWidth() + window.innerHeight}`,
+        scrub: true,
+        pin: true,
+        anticipatePin: 1,
+        invalidateOnRefresh: true,
+        // markers: true,
+        onUpdate: (self) => {
+          if (progressBar) {
+            progressBar.style.width = `${Math.round(self.progress * 100)}%`;
+          }
+        },
       },
-    },
-    ease: "none", // Sin easing para scroll suave
-  });
-
-  // Efecto hover suave en tarjetas
-  projectCards.forEach((card) => {
-    card.addEventListener("mouseenter", () => {
-      gsap.to(card, {
-        y: -10,
-        duration: 0.3,
-        overwrite: "auto",
-      });
     });
 
-    card.addEventListener("mouseleave", () => {
-      gsap.to(card, {
-        y: 0,
-        duration: 0.3,
-        overwrite: "auto",
-      });
+    // hover animations (desktop)
+    projectCards.forEach((card) => {
+      const enter = () =>
+        gsap.to(card, { y: -10, duration: 0.3, overwrite: "auto" });
+      const leave = () =>
+        gsap.to(card, { y: 0, duration: 0.3, overwrite: "auto" });
+      card.addEventListener("mouseenter", enter);
+      card.addEventListener("mouseleave", leave);
+      // store listeners so they can be removed on revert
+      card._enter = enter;
+      card._leave = leave;
     });
+
+    // refresh on resize to recalculate sizes
+    const onRefresh = () => {
+      // force refresh ScrollTrigger calculations
+      ScrollTrigger.refresh();
+    };
+    window.addEventListener("resize", onRefresh);
+
+    // Return a cleanup function that mm will call when this context is deactivated
+    return () => {
+      horizontalTween && horizontalTween.kill();
+      // kill ScrollTriggers related to proyectosTrack
+      ScrollTrigger.getAll().forEach((st) => {
+        if (st.trigger === proyectosWrapper) st.kill();
+      });
+      // remove hover listeners
+      projectCards.forEach((card) => {
+        if (card._enter) card.removeEventListener("mouseenter", card._enter);
+        if (card._leave) card.removeEventListener("mouseleave", card._leave);
+        delete card._enter;
+        delete card._leave;
+      });
+      window.removeEventListener("resize", onRefresh);
+      // reset inline transforms
+      gsap.set(proyectosTrack, { clearProps: "transform" });
+      if (progressBar) progressBar.style.width = "0%";
+    };
   });
+
+  // Mobile: disable ScrollTrigger and switch to vertical stacking/normal scroll
+  mm.add({ isMobile: "(max-width: 768px)" }, () => {
+    // Ensure any existing ScrollTriggers are killed
+    ScrollTrigger.getAll().forEach((st) => st.kill());
+
+    // Reset proyectosTrack styles so it flows vertically
+    proyectosTrack.style.display = "block";
+    proyectosTrack.style.overflow = "visible";
+    proyectosTrack.style.flexDirection = "initial";
+    proyectosTrack.style.gap = "var(--space-lg)";
+    proyectosTrack.style.padding = "0 var(--space-2xl) var(--space-4xl)";
+    gsap.set(proyectosTrack, { clearProps: "transform,will-change" });
+
+    // Make each card full width and stacked
+    projectCards.forEach((card) => {
+      card.style.width = "100%";
+      card.style.height = "auto";
+      card.style.marginBottom = "var(--space-lg)";
+      card.style.scrollSnapAlign = "none";
+    });
+
+    // remove any progress indicator usage
+    if (progressBar) progressBar.style.width = "0%";
+
+    // cleanup: nothing special to teardown here (mm will clear when leaving)
+    return () => {
+      // restore inline styles removed by mobile adjustments
+      proyectosTrack.style.display = "flex";
+      proyectosTrack.style.overflow = "";
+      projectCards.forEach((card) => {
+        card.style.width = "";
+        card.style.height = "";
+        card.style.marginBottom = "";
+      });
+    };
+  });
+
+  // optional: listen for matchMedia change and refresh ScrollTrigger
+  // mm will handle calling the returned cleanup functions automatically.
 });
 
 // ===== WORK CAROUSEL - SCROLL SNAP (Estilo Framer) =====

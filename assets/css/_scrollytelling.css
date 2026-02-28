@@ -18,15 +18,26 @@
   overflow: hidden;
 }
 
-/* Video de fondo */
+/* Video de fondo (aquí es una imagen que se comporta como background)
+   Se mantiene object-fit: cover; y añadimos propiedades de respaldo en caso
+   de que algún elemento use background en el futuro. */
 .hero-video {
   position: absolute;
-  top: 0%;
-  left: 0px;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   z-index: 1;
+  /* el contenedor del hero también debe respetar el recorte */
+  background-size: cover;
+  background-position: center;
+}
+
+/* el propio .hero podría usar fondo estático en otras variantes */
+.hero {
+  background-size: cover;
+  background-position: center;
 }
 
 /* Contenido encima del video */
@@ -488,7 +499,14 @@
   flex-direction: column;
   gap: var(--space-md);
   max-width: 500px;
+  width: 100%; /* grow to fill available space on narrow screens */
   margin: 0 auto;
+}
+
+/* ensure form inputs and textareas never extend past container */
+.contacto__input,
+.contacto__textarea {
+  max-width: 100%;
 }
 .contacto__input,
 .contacto__textarea {
@@ -569,7 +587,7 @@
 .parallax-section {
   height: 60vh;
   /* use the provided hero image as the background; keep fixed attachment for parallax effect */
-  background-image: url('https://ik.imagekit.io/romendieta0207/images/WOS%20_AFICHE.jpg?updatedAt=1770578461520');
+  background-image: url("https://ik.imagekit.io/romendieta0207/images/WOS%20_AFICHE.jpg?updatedAt=1770578461520");
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
@@ -962,17 +980,23 @@
 }
 
 /* ===== CONTACT FORM SECTION ===== */
+/* base layout for desktop, mobile tweaks follow below */
 .contacto {
   padding: var(--space-4xl) var(--space-2xl);
   background: #0b3249;
+  /* make sure section never forces horizontal scroll */
+  box-sizing: border-box;
+  max-width: 100%;
 }
 
 .contacto__container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-4xl);
-  max-width: 1200px;
+  /* allow container to shrink on small viewports */
+  max-width: 100%;
   margin: 0 auto;
+  padding: 0 1rem; /* lateral padding to avoid touching edges */
 }
 
 /* Columna izquierda */
@@ -983,9 +1007,13 @@
 }
 
 .contacto__heading {
-  font-size: var(--font-size-4xl);
+  /* responsive font size with clamp to adapt between small and large devices */
+  font-size: clamp(1.75rem, 5vw + 1rem, var(--font-size-4xl));
   color: var(--color-secondary);
   font-weight: var(--font-weight-bold);
+  /* allow heading to wrap normally and break long words if needed */
+  white-space: normal;
+  word-break: break-word;
 }
 
 .contacto__phone {
@@ -1113,10 +1141,16 @@
   .contacto__container {
     grid-template-columns: 1fr;
     gap: var(--space-2xl);
+    padding: 0 1rem; /* keep lateral padding when stacked */
   }
 
   .contacto__btn {
     align-self: center;
+  }
+
+  /* ensure heading and text scale down further on very small phones */
+  .contacto__heading {
+    font-size: clamp(1.5rem, 6vw + 1rem, 2.25rem);
   }
 }
 
@@ -1272,16 +1306,21 @@
     height: auto;
   }
 
+  /* On mobile switch to vertical flow: no pin, no horizontal scroll */
   .proyectos-track {
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
+    display: block;
+    overflow: visible;
+    scroll-snap-type: none;
+    -webkit-overflow-scrolling: auto;
+    gap: var(--space-lg);
+    padding: 0 var(--space-2xl) var(--space-4xl);
   }
 
   .proyecto-card {
-    width: 500px;
-    height: 240px;
-    scroll-snap-align: center;
+    width: 100%;
+    height: auto;
+    margin-bottom: var(--space-lg);
+    scroll-snap-align: none;
   }
 
   .proyecto-title {
@@ -1448,8 +1487,8 @@
   }
 
   .photo-frame {
-    width: 240px;
-    height: 300px;
+    width: 316px;
+    height: 385px;
     left: 20px;
     top: 10px;
   }

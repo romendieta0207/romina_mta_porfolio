@@ -57,3 +57,19 @@ docs/INFORME-PROYECTOS.md
 ---
 
 El informe puede integrarse al paquete de documentación del proyecto. ¡Proyectos listos!.
+
+## Actualización: Scroll horizontal responsivo (27/02/2026)
+
+Se adaptó la sección de proyectos para que el comportamiento de scroll horizontal con GSAP ScrollTrigger funcione solo en pantallas de escritorio y se desactive en móviles.
+
+Cambios principales:
+
+- JavaScript: `assets/js/main.js` ahora usa `gsap.matchMedia()` para crear el `ScrollTrigger` únicamente en `(min-width: 769px)` y matar cualquier instancia en `(max-width: 768px)`. Se añadió limpieza robusta (kill de tweens y ScrollTrigger, eliminación de listeners y restauración de estilos).
+- CSS: en `assets/css/_scrollytelling.css` se añadieron reglas en `@media (max-width: 768px)` para que `.proyectos-track` fluya en vertical y `.proyecto-card` ocupe `100%` del ancho (sin overflow oculto ni pin).
+
+Resultado:
+
+- Desktop: pin + scrub activos (scroll horizontal fijado).
+- Móvil: scroll vertical normal, tarjetas apiladas, sin pin ni recortes.
+
+Ver `assets/js/main.js` y `assets/css/_scrollytelling.css` para detalles de implementación.
