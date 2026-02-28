@@ -95,6 +95,13 @@ nav a.active {
 @media (max-width: 768px) {
   .nav-toggle {
     display: block;
+    /* ensure toggle sits at far right of header flex container */
+    margin-left: auto;
+  }
+  .header-content {
+    /* reaffirm spacing on small screens */
+    justify-content: space-between;
+    align-items: center; /* vertical centering with logo */
   }
   .primary-nav {
     position: absolute;
