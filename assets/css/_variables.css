@@ -64,9 +64,8 @@
 
   /* Font families */
   --font-family-base:
-    "Rubik", system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial,
-    sans-serif;
-  --font-family-heading: "Rubik Mono One", monospace;
+    "Sora", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-family-heading: "Sora", bold;
   --font-family-mono:
 
   /* ===== SPACING SCALE ===== */

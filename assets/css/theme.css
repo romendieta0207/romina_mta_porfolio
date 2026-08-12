@@ -1,10 +1,11 @@
 /* Design Tokens - Typography */
 :root {
   /* Font Family */
+  /* Load Inter + Sora from Google Fonts (used as primary system fonts) */
   --font-primary:
-    -apple-system, BlinkMacSystemFont, "Segoe UI", "Rubik", sans-serif;
-  --font-secondary: "Versos text", sans-serif;
-  --font-mono: "Courier New", monospace;
+    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-secondary: "Sora", sans-serif;
+  --font-mono: monospace;
 
   /* Font Sizes */
   --font-size-xs: 0.75rem;
@@ -29,14 +30,15 @@
   --line-height-relaxed: 1.75;
 
   /* Colors - Primary */
-  --color-primary: #0b3249;
-  --color-primary-light: #679cbc;
-  --color-primary-dark: #061b27;
+  /* Primary = dark blue (text), Secondary = red (accent) */
+  --color-primary: #061b27;
+  --color-primary-light: #1b4756;
+  --color-primary-dark: #031418;
 
-  /* Colors - Secondary */
+  /* Colors - Secondary (accent red) */
   --color-secondary: #d23f57;
-  --color-secondary-light: #f6bc3f;
-  --color-secondary-dark: rgb(255, 241, 214);
+  --color-secondary-light: #f7a1b0;
+  --color-secondary-dark: #a02a40;
 
   /* Colors - Neutral */
   --color-white: #ffffff;

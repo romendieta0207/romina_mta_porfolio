@@ -16,7 +16,7 @@
    ============================================ */
 
 /* 0. Google Fonts import - Rubik typeface for Romina's portfolio */
-@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
 
 /* 1. Variables first: tokens used by all other modules */
 @import "_variables.css";
@@ -35,6 +35,9 @@
 
 /* 5.3 Proyecto Pages: individual project page styles */
 @import "_proyecto.css";
+
+/* 5.4 Propuestas: landing editorial premium */
+@import "_propuesta.css";
 
 /* 5.5 Scrollytelling: progressive reveal components */
 @import "_scrollytelling.css";

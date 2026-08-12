@@ -1,0 +1,232 @@
+{
+  "slug": "udit",
+  "cliente": "UDIT",
+  "proyecto": "Diseño editorial para Newsletter de Investigación",
+  "descripcion": "Propuesta de colaboración freelance para la producción continua de la Newsletter de Investigación y piezas gráficas asociadas.",
+  "hero": {
+    "eyebrow": "Cotización para UDIT · Vicerrectorado de Investigación",
+    "title": "Diseño editorial para tu <span class=\"accent\">newsletter</span> mensual",
+    "subtitle": "Propuesta de colaboración freelance para la producción continua de la Newsletter de Investigación y las piezas gráficas asociadas: afiches, trípticos, invitaciones, cronogramas, formularios e infografías.",
+    "metas": [
+      { "icon": "📄", "text": "~20 páginas por edición" },
+      { "icon": "⏱", "text": "Entrega en ~2 semanas" },
+      { "icon": "✓", "text": "Máster en Ilustración · UDIT Madrid" }
+    ]
+  },
+  "navLinks": [
+    { "label": "Servicios", "href": "#servicios" },
+    { "label": "Precios", "href": "#precios" },
+    { "label": "Incluye", "href": "#incluye" },
+    { "label": "Términos", "href": "#terminos" }
+  ],
+  "servicios": {
+    "eyebrow": "Servicios incluidos en la propuesta",
+    "title": "Todo lo que produzco mes a mes",
+    "subtitle": "La newsletter es el eje del trabajo; el resto de piezas acompaña la comunicación institucional del Vicerrectorado.",
+    "items": [
+      {
+        "n": "01",
+        "title": "Newsletter mensual",
+        "description": "Maquetación editorial completa: portada, secciones, entrevistas, fotos e infografías."
+      },
+      {
+        "n": "02",
+        "title": "Piezas de campaña",
+        "description": "Afiches, carteles y trípticos para convocatorias y eventos."
+      },
+      {
+        "n": "03",
+        "title": "Piezas institucionales",
+        "description": "Invitaciones y cronogramas para actividades y agendas."
+      },
+      {
+        "n": "04",
+        "title": "Documentos funcionales",
+        "description": "Formularios editables e infografías de datos o proceso."
+      }
+    ]
+  },
+  "precios": {
+    "eyebrow": "Precios",
+    "title": "Elige la forma de facturar",
+    "subtitle": "Como paquete mensual con volumen previsible, o pieza por pieza en meses irregulares.",
+    "toggle": {
+      "labelMes": "Por mes",
+      "labelPieza": "Por entregable"
+    },
+    "paquetesMes": [
+      {
+        "name": "Solo entregables",
+        "desc": "Sin compromiso mensual, cada pieza por separado.",
+        "price": "70€",
+        "unit": "desde / pieza",
+        "items": [
+          "Facturación por pieza entregada",
+          "Ideal para meses de bajo volumen",
+          "Sin mínimo mensual"
+        ],
+        "featured": false,
+        "badge": null,
+        "foot": "Ver tabla completa de precios por entregable →"
+      },
+      {
+        "name": "Mes estándar",
+        "desc": "Newsletter + volumen habitual de piezas menores.",
+        "price": "800–850€",
+        "unit": "/ mes + IVA",
+        "items": [
+          "1 edición de newsletter (~20 páginas)",
+          "Hasta 3 piezas menores al mes",
+          "1 ronda de ajustes por pieza",
+          "Tarifa profesional, nivel máster"
+        ],
+        "featured": true,
+        "badge": "Recomendado",
+        "foot": "Formularios e infografías se cotizan aparte según volumen."
+      },
+      {
+        "name": "Mes con pieza adicional",
+        "desc": "Cuando además piden un brochure o revista similar.",
+        "price": "1.150–1.250€",
+        "unit": "/ mes + IVA",
+        "items": [
+          "Todo lo del mes estándar",
+          "+ 1 pieza editorial adicional (brochure/revista)",
+          "Prioridad de agenda en el mes"
+        ],
+        "featured": false,
+        "badge": null,
+        "foot": "Aplica cuando se solicita una segunda pieza de gran formato."
+      },
+      {
+        "name": "Proyectos especiales",
+        "desc": "Campañas, eventos o formularios de mayor alcance.",
+        "price": "A medida",
+        "unit": "según alcance",
+        "items": [
+          "Alcance y cronograma propios",
+          "Cotización específica antes de iniciar",
+          "Mismo estándar de calidad"
+        ],
+        "featured": false,
+        "badge": null,
+        "foot": "Se cotiza aparte del paquete mensual."
+      }
+    ],
+    "paquetesPieza": [
+      {
+        "entrega": "Newsletter mensual (maquetación + portada, ~20 pág.)",
+        "precio": "400 € / edición"
+      },
+      { "entrega": "Brochure / revista adicional", "precio": "300 – 380 €" },
+      { "entrega": "Afiche / cartel", "precio": "100 – 130 €" },
+      { "entrega": "Tríptico", "precio": "110 – 150 €" },
+      { "entrega": "Invitación", "precio": "70 – 100 €" },
+      { "entrega": "Cronograma", "precio": "130 – 170 €" },
+      { "entrega": "Formulario editable", "precio": "100 – 140 €" },
+      { "entrega": "Infografía", "precio": "140 – 180 €" }
+    ],
+    "tablaNote": "Tarifa profesional de 35–40 €/h (nivel máster). Precios sin IVA. Campañas, eventos o formularios de mayor alcance se cotizan aparte."
+  },
+  "incluye": {
+    "eyebrow": "Alcance del servicio",
+    "title": "Qué incluye y qué no",
+    "items": [
+      {
+        "type": "yes",
+        "image": "/image/incluye-ref.png",
+        "items": [
+          "Diseño y maquetación de piezas gráficas",
+          "Investigación y desarrollo de conceptos",
+          "Adaptaciones para distintos formatos",
+          "Preparación de archivos para impresión y medios digitales",
+          "Reuniones de briefing y seguimiento por videollamada o email",
+          "Hasta 2 rondas de cambios por pieza",
+          "Comunicación continua y organización de las entregas"
+        ]
+      },
+      {
+        "type": "no",
+        "image": "/image/noincluye-ref.png",
+        "items": [
+          "Memorias institucionales o publicaciones editoriales extensas",
+          "Brochures, catálogos y manuales (branding completo)",
+          "Identidad visual y branding completo",
+          "Campañas de comunicación integradas",
+          "Motion graphics, animación y edición de video",
+          "Desarrollo web",
+          "Ilustraciones de alta complejidad"
+        ]
+      }
+    ]
+  },
+  "tiempos": {
+    "eyebrow": "Tiempos de entrega",
+    "title": "Cuánto tarda cada cosa",
+    "items": [
+      {
+        "n": "~2 sem",
+        "title": "Newsletter",
+        "description": "Según entrega de contenidos y ronda de revisión del Vicerrectorado."
+      },
+      {
+        "n": "2–4 d",
+        "title": "Piezas gráficas",
+        "description": "Afiches, invitaciones, trípticos y cronogramas."
+      },
+      {
+        "n": "3–5 d",
+        "title": "Documentos",
+        "description": "Formularios editables e infografías de datos."
+      },
+      {
+        "n": "24–48h",
+        "title": "Ajustes",
+        "description": "Respuesta sobre cambios dentro de las rondas incluidas."
+      }
+    ]
+  },
+  "terminos": {
+    "eyebrow": "Términos y condiciones",
+    "title": "Lo importante, en claro",
+    "items": [
+      "Facturación mensual mediante <strong>factura como autónoma</strong>, según el plan elegido.",
+      "Tarifa profesional acorde a formación de <strong>máster</strong> (35–40 €/h).",
+      "Precios sujetos a <strong>IVA (21%)</strong> y a la retención de IRPF que corresponda.",
+      "Esta cotización es <strong>válida por 30 días</strong> desde su fecha de envío.",
+      "Piezas o proyectos fuera del alcance descrito se cotizan de forma <strong>independiente</strong>, antes de iniciar el trabajo."
+    ]
+  },
+  "cta": {
+    "title": "¿Seguimos adelante?",
+    "description": "Si la propuesta te parece clara, confírmalo por correo y coordinamos el primer mes de trabajo.",
+    "buttons": [
+      {
+        "label": "Aceptar cotización",
+        "href": "mailto:romina.mendieta@example.com?subject=Acepto%20la%20cotización",
+        "type": "dark"
+      },
+      { "label": "Volver a revisar", "href": "#servicios", "type": "outline" }
+    ]
+  },
+  "contacto": {
+    "title": "Datos de contacto",
+    "items": [
+      {
+        "type": "email",
+        "label": "romina.mendieta@example.com",
+        "href": "mailto:romina.mendieta@example.com"
+      },
+      {
+        "type": "phone",
+        "label": "+34 000 00 00 00",
+        "href": "tel:+34000000000"
+      },
+      { "type": "text", "label": "Diseño editorial & ilustración" }
+    ]
+  },
+  "footer": {
+    "line1": "Romina Mendieta — Diseño editorial & ilustración. Cotización preparada para UDIT, Vicerrectorado de Investigación.",
+    "line2": "Válida por 30 días desde su fecha de envío."
+  }
+}

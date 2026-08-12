@@ -1,0 +1,1584 @@
+﻿<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Propuesta de Servicios ? R&gt;M</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f2f1ec;
+        --card: #ffffff;
+        --ink: #061b27;
+        --ink-soft: #5c5b56;
+        --yellow: #679cf5;
+        --yellow-deep: #20488e;
+        --line: #e0ded5;
+        --dark: #7e1a2b;
+        --radius: 18px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Sora", system-ui, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+      .display {
+        font-family: "Archivo Black", "Sora bold", sans-serif;
+        letter-spacing: -0.02em;
+      }
+      .eyebrow {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+      }
+      .wrap {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+      a {
+        color: inherit;
+      }
+
+      /* ---------- top bar ---------- */
+      header.top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 28px 32px 18px;
+        max-width: 1120px;
+        margin: 0 auto;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .logo img {
+        display: block;
+        height: 46px;
+        width: auto;
+        object-fit: contain;
+      }
+      .logo-mark {
+        width: 34px;
+        height: 34px;
+        border-radius: 8px;
+        background: var(--ink);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Archivo Black", sans-serif;
+        font-size: 15px;
+      }
+      .logo-text {
+        font-size: 11px;
+        line-height: 1.3;
+        color: var(--ink-soft);
+        font-weight: 600;
+      }
+      .logo-text b {
+        color: var(--ink);
+        display: block;
+        font-size: 11.5px;
+        letter-spacing: 0.03em;
+      }
+      .top-right {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 10px;
+        text-align: right;
+        font-size: 11px;
+        color: var(--ink-soft);
+        font-weight: 600;
+        letter-spacing: 0.04em;
+      }
+      .top-right b {
+        color: var(--ink);
+        display: block;
+        font-size: 11.5px;
+      }
+      .btn-sm {
+        padding: 10px 16px;
+        font-size: 12px;
+      }
+
+      /* ---------- side nav dots ---------- */
+      .dotnav {
+        position: fixed;
+        right: 26px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        z-index: 50;
+      }
+      .dotnav button {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        border: none;
+        background: #cfcdc2;
+        cursor: pointer;
+        padding: 0;
+        transition: all 0.35s ease;
+      }
+      .dotnav button.active {
+        background: var(--yellow);
+        width: 10px;
+        height: 10px;
+        box-shadow: 0 0 0 4px rgba(244, 228, 9, 0.25);
+      }
+      @media (max-width: 860px) {
+        .dotnav {
+          display: none;
+        }
+      }
+
+      section {
+        padding: 56px 0;
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(24px);
+        transition:
+          opacity 0.7s ease,
+          transform 0.7s ease;
+      }
+      .reveal.in {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* ---------- hero ---------- */
+      .hero {
+        padding-top: 8px;
+        padding-bottom: 24px;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.55fr;
+        gap: 40px;
+        align-items: start;
+      }
+      .hello {
+        font-size: 15px;
+        color: var(--ink-soft);
+        margin-bottom: 4px;
+      }
+      .client-name {
+        font-size: 20px;
+        font-weight: 800;
+        margin: 0 0 14px;
+      }
+      .thanks {
+        font-size: 14px;
+        color: var(--ink-soft);
+        margin: 0 0 26px;
+        max-width: 280px;
+      }
+      .stat-row {
+        display: flex;
+        gap: 22px;
+      }
+      .stat {
+        border-left: 1px solid var(--line);
+        padding-left: 16px;
+      }
+      .stat:first-child {
+        border-left: none;
+        padding-left: 0;
+      }
+      .stat b {
+        font-size: 26px;
+        display: block;
+        font-family: "Archivo Black", sans-serif;
+      }
+      .stat span {
+        font-size: 12px;
+        color: var(--ink-soft);
+        line-height: 1.3;
+        display: block;
+        max-width: 120px;
+      }
+
+      .hero-right .quote-no {
+        font-size: 12px;
+        color: var(--ink-soft);
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        margin-bottom: 10px;
+      }
+      h1.title {
+        font-size: clamp(40px, 6vw, 72px);
+        line-height: 0.98;
+        margin: 0 0 18px;
+        position: relative;
+      }
+      h1.title .star {
+        color: var(--yellow);
+        -webkit-text-stroke: 0;
+        font-size: 0.5em;
+        vertical-align: top;
+      }
+      .project-name {
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+        color: var(--ink-soft);
+      }
+      .project-desc {
+        font-size: 15.5px;
+        line-height: 1.6;
+        color: #3a3a38;
+        max-width: 560px;
+      }
+
+      .feature-strip {
+        display: flex;
+        gap: 34px;
+        margin-top: 26px;
+        flex-wrap: wrap;
+      }
+      .feature-strip .f {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--ink-soft);
+      }
+      .feature-strip .f .ico {
+        width: 30px;
+        height: 30px;
+        border-radius: 9px;
+        background: var(--yellow);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+      }
+
+      /* ---------- dark banner ---------- */
+      .banner {
+        background: var(--dark);
+        border-radius: var(--radius);
+        margin: 36px 0;
+        padding: 38px 44px;
+        position: relative;
+        overflow: hidden;
+        color: #fff;
+      }
+      .banner::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(
+            circle at 15% 30%,
+            rgba(255, 255, 255, 0.09),
+            transparent 40%
+          ),
+          radial-gradient(
+            circle at 70% 70%,
+            rgba(255, 255, 255, 0.06),
+            transparent 45%
+          ),
+          radial-gradient(
+            circle at 90% 15%,
+            rgba(244, 228, 9, 0.08),
+            transparent 35%
+          );
+        animation: drift 14s ease-in-out infinite alternate;
+      }
+      @keyframes drift {
+        from {
+          transform: scale(1) translate(0, 0);
+        }
+        to {
+          transform: scale(1.12) translate(-2%, 2%);
+        }
+      }
+      .banner-tag {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.12);
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        position: relative;
+      }
+      .banner h2 {
+        font-size: clamp(24px, 3.2vw, 34px);
+        line-height: 1.2;
+        margin: 0;
+        max-width: 560px;
+        position: relative;
+        font-weight: 800;
+        font-family: "Inter", sans-serif;
+      }
+
+      /* ---------- section headings ---------- */
+      .sec-head {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 26px;
+      }
+      .num {
+        width: 30px;
+        height: 30px;
+        border-radius: 9px;
+        background: var(--yellow);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        font-weight: 800;
+        flex-shrink: 0;
+      }
+      .sec-head h3 {
+        font-size: 22px;
+        margin: 0;
+        font-weight: 800;
+      }
+
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+      }
+      @media (max-width: 860px) {
+        .two-col {
+          grid-template-columns: 1fr;
+        }
+        .hero-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ---------- package cards ---------- */
+      .pkg-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 22px;
+      }
+      @media (max-width: 760px) {
+        .pkg-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .pkg {
+        background: var(--card);
+        border-radius: var(--radius);
+        padding: 30px 28px;
+        border: 1px solid var(--line);
+        position: relative;
+        transition:
+          transform 0.35s ease,
+          box-shadow 0.35s ease;
+        cursor: pointer;
+      }
+      .pkg:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+      }
+      .pkg.selected {
+        box-shadow: 0 0 0 3px var(--ink);
+      }
+      .pkg.featured {
+        background: var(--yellow);
+      }
+      .badge {
+        position: absolute;
+        top: -13px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--ink);
+        color: #fff;
+        font-size: 10.5px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        padding: 6px 16px;
+        border-radius: 20px;
+        text-transform: uppercase;
+      }
+      .pkg h4 {
+        font-size: 22px;
+        margin: 6px 0 8px;
+        font-weight: 800;
+      }
+      .pkg .desc {
+        font-size: 13.5px;
+        color: var(--ink-soft);
+        margin-bottom: 18px;
+        min-height: 36px;
+      }
+      .pkg.featured .desc {
+        color: #3d3a00;
+      }
+      .price {
+        font-family: "Archivo Black", sans-serif;
+        font-size: 34px;
+        margin-bottom: 20px;
+      }
+      .price span {
+        font-family: "Inter", sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--ink-soft);
+      }
+      .pkg.featured .price span {
+        color: #4a4700;
+      }
+      .pkg ul {
+        list-style: none;
+        margin: 0 0 24px;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .pkg li {
+        font-size: 13.5px;
+        display: flex;
+        gap: 9px;
+        align-items: flex-start;
+        line-height: 1.4;
+      }
+      .pkg li::before {
+        content: "?";
+        font-weight: 800;
+        flex-shrink: 0;
+      }
+      .btn {
+        border: none;
+        border-radius: 11px;
+        padding: 13px 20px;
+        font-size: 13.5px;
+        font-weight: 700;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition:
+          transform 0.2s ease,
+          background 0.2s ease;
+        font-family: "Inter", sans-serif;
+      }
+      .btn:active {
+        transform: scale(0.97);
+      }
+      .btn-dark {
+        background: var(--ink);
+        color: #fff;
+      }
+      .btn-dark:hover {
+        background: #000;
+      }
+      .btn-yellow {
+        background: var(--ink);
+        color: var(--yellow);
+      }
+      .btn-outline {
+        background: transparent;
+        color: var(--ink);
+        border: 1.5px solid var(--ink);
+      }
+      .btn-outline:hover {
+        background: var(--ink);
+        color: #fff;
+      }
+      .btn-full {
+        width: 100%;
+        justify-content: center;
+      }
+
+      /* ---------- tariff table ---------- */
+      .tariff {
+        background: var(--card);
+        border-radius: var(--radius);
+        padding: 8px 26px;
+        border: 1px solid var(--line);
+      }
+      .trow {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 16px 0;
+        border-bottom: 1px solid var(--line);
+        font-size: 14px;
+      }
+      .trow:last-child {
+        border-bottom: none;
+      }
+      .trow .t-name {
+        font-weight: 600;
+      }
+      .trow .t-sub {
+        color: var(--ink-soft);
+        font-size: 12px;
+        margin-top: 2px;
+      }
+      .trow .t-price {
+        font-weight: 800;
+        white-space: nowrap;
+      }
+      .note-box {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+        background: #fbfaf3;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 16px 18px;
+        margin-top: 20px;
+        font-size: 13px;
+        color: var(--ink-soft);
+        line-height: 1.5;
+      }
+      .note-box .star {
+        color: var(--yellow-deep);
+        background: var(--ink);
+        width: 26px;
+        height: 26px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        font-size: 13px;
+      }
+
+      /* ---------- include/exclude ---------- */
+      .panel {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 26px 28px;
+      }
+      .chip {
+        width: 100%;
+        height: 140px;
+        border-radius: 14px;
+        margin-bottom: 20px;
+        position: relative;
+        overflow: hidden;
+      }
+      .chip.ok {
+        background: radial-gradient(circle at 30% 30%, #2b2b2b, #0a0a0a 70%);
+      }
+      .chip.no {
+        background: radial-gradient(circle at 65% 40%, #3a3a3a, #101010 75%);
+      }
+      .chip::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: repeating-linear-gradient(
+          115deg,
+          rgba(255, 255, 255, 0.05) 0 2px,
+          transparent 2px 6px
+        );
+      }
+      .chip .star-mark {
+        position: absolute;
+        bottom: 14px;
+        left: 16px;
+        color: var(--yellow);
+        font-size: 22px;
+      }
+      .panel ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 11px;
+      }
+      .panel li {
+        font-size: 13.5px;
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+        line-height: 1.45;
+      }
+      .panel.ok li::before {
+        content: "?";
+        font-weight: 800;
+        color: var(--ink);
+        flex-shrink: 0;
+      }
+      .panel.no li::before {
+        content: "?";
+        font-weight: 800;
+        color: #b7b4a5;
+        flex-shrink: 0;
+      }
+
+      /* ---------- timeline ---------- */
+      .time-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+      @media (max-width: 760px) {
+        .time-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .time-card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 22px;
+      }
+      .time-ico {
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+        background: var(--bg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 14px;
+        font-size: 16px;
+      }
+      .time-card h5 {
+        margin: 0 0 10px;
+        font-size: 14px;
+        font-weight: 700;
+      }
+      .time-tag {
+        display: inline-block;
+        background: var(--bg);
+        border: 1px solid var(--line);
+        font-size: 12px;
+        font-weight: 700;
+        padding: 6px 12px;
+        border-radius: 20px;
+      }
+      .time-foot {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        margin-top: 18px;
+        font-size: 12.5px;
+        color: var(--ink-soft);
+      }
+
+      /* ---------- terms ---------- */
+      .terms-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px 40px;
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 28px 30px;
+      }
+      @media (max-width: 760px) {
+        .terms-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .terms-grid li {
+        list-style: none;
+        font-size: 13.5px;
+        display: flex;
+        gap: 10px;
+        margin-bottom: 14px;
+        line-height: 1.5;
+      }
+      .terms-grid li::before {
+        content: "?";
+        font-weight: 800;
+        flex-shrink: 0;
+      }
+
+      /* ---------- contact + CTA ---------- */
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 22px;
+      }
+      @media (max-width: 860px) {
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .contact-card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 28px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .contact-row {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        font-size: 14px;
+        font-weight: 600;
+      }
+      .contact-row .ico {
+        width: 34px;
+        height: 34px;
+        border-radius: 9px;
+        background: var(--bg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px;
+        flex-shrink: 0;
+      }
+      .cta-card {
+        background: var(--yellow);
+        border-radius: var(--radius);
+        padding: 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 16px;
+        position: relative;
+        overflow: hidden;
+      }
+      .cta-card h4 {
+        font-size: 24px;
+        margin: 0;
+        font-weight: 800;
+      }
+      .cta-card p {
+        margin: 0;
+        font-size: 14px;
+        color: #3d3a00;
+        max-width: 360px;
+      }
+      .cta-btns {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 6px;
+      }
+
+      footer {
+        background: var(--dark);
+        color: #fff;
+        border-radius: var(--radius);
+        margin: 40px 0 20px;
+        padding: 26px 34px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      footer p {
+        margin: 0;
+        font-size: 13px;
+        color: #cfcfc9;
+        max-width: 420px;
+      }
+      footer .f-logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      footer .f-logo img {
+        display: block;
+        height: 34px;
+        width: auto;
+      }
+      footer .f-logo b {
+        color: #fff;
+        display: block;
+        font-size: 12px;
+      }
+
+      /* ---------- sticky selection bar ---------- */
+      .sticky-bar {
+        position: fixed;
+        left: 50%;
+        bottom: 22px;
+        transform: translate(-50%, 140%);
+        background: var(--ink);
+        color: #fff;
+        border-radius: 16px;
+        padding: 14px 18px;
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        transition: transform 0.45s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+        z-index: 60;
+        max-width: 92vw;
+      }
+      .sticky-bar.show {
+        transform: translate(-50%, 0);
+      }
+      .sticky-bar .sb-info {
+        font-size: 13px;
+      }
+      .sticky-bar .sb-info b {
+        color: var(--yellow);
+        display: block;
+        font-size: 14px;
+      }
+      .sticky-bar .btn-yellow {
+        white-space: nowrap;
+      }
+
+      .toast {
+        position: fixed;
+        top: 22px;
+        left: 50%;
+        transform: translate(-50%, -140%);
+        background: var(--ink);
+        color: #fff;
+        padding: 13px 22px;
+        border-radius: 12px;
+        font-size: 13.5px;
+        font-weight: 600;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        transition: transform 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+        z-index: 80;
+      }
+      .toast.show {
+        transform: translate(-50%, 0);
+      }
+      .toast .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--yellow);
+      }
+
+      .modal-backdrop {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.55);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 100;
+      }
+      .modal-backdrop.show {
+        display: flex;
+      }
+      .modal {
+        width: min(540px, calc(100vw - 40px));
+        background: #fff;
+        border-radius: 22px;
+        padding: 28px 28px 24px;
+        box-shadow: 0 32px 80px rgba(0, 0, 0, 0.18);
+      }
+      .modal h4 {
+        margin: 0 0 16px;
+        font-size: 20px;
+        font-weight: 800;
+      }
+      .modal p {
+        margin: 0 0 20px;
+        color: var(--ink-soft);
+        line-height: 1.6;
+      }
+      .modal-form {
+        display: grid;
+        gap: 14px;
+      }
+      .modal-form label {
+        display: grid;
+        gap: 6px;
+        font-size: 13px;
+        color: var(--ink-soft);
+      }
+      .modal-form input,
+      .modal-form textarea {
+        width: 100%;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 12px 14px;
+        font-size: 14px;
+        font-family: inherit;
+        color: var(--ink);
+      }
+      .modal-form textarea {
+        resize: vertical;
+        min-height: 100px;
+      }
+      .modal-actions {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px;
+        margin-top: 10px;
+      }
+      .modal-actions .btn {
+        min-width: 130px;
+      }
+      .modal-close {
+        position: absolute;
+        top: 18px;
+        right: 18px;
+        width: 34px;
+        height: 34px;
+        border: none;
+        border-radius: 999px;
+        background: rgba(0, 0, 0, 0.08);
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        color: var(--ink);
+      }
+      .modal-close:hover {
+        background: rgba(0, 0, 0, 0.12);
+      }
+
+      ::selection {
+        background: var(--yellow);
+        color: var(--ink);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="dotnav" id="dotnav"></div>
+
+    <div class="toast" id="toast">
+      <span class="dot"></span><span id="toast-text"></span>
+    </div>
+
+    <div class="modal-backdrop" id="email-modal">
+      <div
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-title"
+      >
+        <button class="modal-close" id="modal-close" aria-label="Cerrar modal">
+          ×
+        </button>
+        <h4 id="modal-title">Enviar cotización</h4>
+        <p>
+          Completa tus datos y envía la cotización directamente a tu correo con
+          la información del cliente y del plan seleccionado.
+        </p>
+        <p style="margin: 0 0 18px; color: var(--ink-soft); font-size: 13px">
+          Este mensaje se enviará a: <strong>romendieta0207@gmail.com</strong>
+        </p>
+        <form
+          class="modal-form"
+          id="email-form"
+          action="https://formsubmit.co/romendieta0207@gmail.com"
+          method="POST"
+          target="_blank"
+        >
+          <input
+            type="hidden"
+            name="_subject"
+            value="Nueva selecci?n de cotizaci?n"
+          />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_next" value="https://formsubmit.co/" />
+          <label>
+            Tu nombre
+            <input
+              type="text"
+              id="sender-name"
+              name="sender_name"
+              placeholder="Tu nombre"
+              required
+            />
+          </label>
+          <label>
+            Tu email
+            <input
+              type="email"
+              id="sender-email"
+              name="sender_email"
+              placeholder="tu@email.com"
+              required
+            />
+          </label>
+          <label>
+            Nombre del cliente
+            <input
+              type="text"
+              id="client-name-field"
+              name="client_name"
+              readonly
+            />
+          </label>
+          <label>
+            Proyecto
+            <input
+              type="text"
+              id="project-name-field"
+              name="project_name"
+              readonly
+            />
+          </label>
+          <label>
+            Plan seleccionado
+            <input
+              type="text"
+              id="plan-selected-field"
+              name="selected_plan"
+              readonly
+            />
+          </label>
+          <label>
+            Mensaje adicional
+            <textarea
+              id="message-field"
+              name="message"
+              placeholder="Observaciones adicionales..."
+            ></textarea>
+          </label>
+          <div class="modal-actions">
+            <button type="button" class="btn btn-outline" id="cancel-modal">
+              Cancelar
+            </button>
+            <button type="submit" class="btn btn-dark">Enviar correo</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <header class="top">
+      <a class="logo" href="../index.html">
+        <img
+          src="https://ik.imagekit.io/romendieta0207/svg/Recurso%204@300x.png"
+          alt="Romina MTA logo"
+        />
+      </a>
+      <div class="top-right">
+<div><b>COTIZACIÓN N.º 2026-07-01</b>27 JULIO 2026</div>        <a class="btn btn-outline btn-sm" href="cotizacion.pdf" download>
+          Descargar PDF
+        </a>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <!-- HERO -->
+      <section class="hero" id="s0">
+        <div class="hero-grid">
+          <div>
+            <div class="hello">Hola,</div>
+            <div class="client-name" contenteditable="true">
+              UDT- Universidad de Diseño, Innovación y Tecnología
+            </div>
+            <p class="thanks">España - Madrid</p>
+            <div class="stat-row">
+              <div class="stat">
+                <b>100%</b><span>Compromiso y dedicación</span>
+              </div>
+              <div class="stat">
+                <b>+5</b><span>Años de experiencia en diseño editorial</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-right">
+            <h1 class="title display">
+              Propuesta<br />de Servicios<span class="star">✦</span>
+            </h1>
+            <div class="project-name" contenteditable="true">COTIZACIONES</div>
+            <p class="project-desc" contenteditable="true">
+              Propuestas de colaboración para el desarrollo de las piezas
+              gráficas y comunicaci?n visual mensuales del Vicerrectoradode
+              Investigaci?n.
+            </p>
+            <div class="feature-strip">
+              <div class="f">
+                <span class="ico">✎</span>Diseño estratégico que comunica
+              </div>
+              <div class="f">
+                <span class="ico">◷</span>Entrega puntual y organizada
+              </div>
+              <div class="f">
+                <span class="ico">✦</span>Comunicación clara y constante
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="banner reveal">
+          <span class="banner-tag">Colaboración mensual</span>
+          <h2>
+            Diseñamos soluciones visuales que comunican valor y propósito.
+          </h2>
+        </div>
+      </section>
+
+      !-- 01 PAQUETES -->
+      <section id="s1">
+        <div class="sec-head reveal">
+          <span class="num">01</span>
+          <h3>Paquetes de colaboración</h3>
+        </div>
+        <div class="pkg-grid">
+          <div class="pkg reveal" data-plan="Esencial" data-price="€800/mes">
+            <h4>Esencial</h4>
+            <p class="desc">
+              Ideal para necesidades habituales con volumen moderado.
+            </p>
+            <div class="price">€800 <span>/mes</span></div>
+            <ul>
+              <li>Newsletter mensual (adaptación + portada)</li>
+              <li>
+                1 proyecto institucional (cartel + cronograma + piezas
+                derivadas)
+              </li>
+              <li>Adaptaciones menores</li>
+              <li>Reuniones y comunicación (videollamada / email)</li>
+              <li>Hasta 2 rondas de cambios por pieza</li>
+            </ul>
+            <button class="btn btn-dark btn-full select-btn">
+              Seleccionar plan →
+            </button>
+          </div>
+          <div
+            class="pkg featured reveal"
+            data-plan="Integral"
+            data-price="€1.000/mes"
+          >
+            <span class="badge">Recomendado</span>
+            <h4>Integral</h4>
+            <p class="desc">
+              Ideal para meses con mayor actividad institucional y varios
+              proyectos.
+            </p>
+            <div class="price">€1.000 <span>/mes</span></div>
+            <ul>
+              <li>Newsletter mensual (adaptaci?n + portada)</li>
+              <li>
+                Hasta 2 proyectos institucionales (cada uno con piezas
+                derivadas)
+              </li>
+              <li>Formularios editables</li>
+              <li>Infografías</li>
+              <li>Invitaciones y adaptaciones</li>
+              <li>Reuniones y comunicación (videollamada / email)</li>
+              <li>Hasta 2 rondas de cambios por pieza</li>
+            </ul>
+            <button class="btn btn-yellow btn-full select-btn">
+              Seleccionar plan →
+            </button>
+          </div>
+        </div>
+      </section>
+
+      !-- 02 TARIFARIO -->
+      <section id="s2">
+        <div class="sec-head reveal">
+          <span class="num">02</span>
+          <h3>Tarifario orientativo</h3>
+        </div>
+        <div class="tariff reveal">
+          <div class="trow">
+            <div>
+              <div class="t-name">Newsletter mensual</div>
+              <div class="t-sub">Adaptación + portada</div>
+            </div>
+            <div class="t-price">€300</div>
+          </div>
+          <div class="trow">
+            <div>
+              <div class="t-name">Proyecto gráfico de evento</div>
+              <div class="t-sub">Cartel + cronograma + piezas derivadas</div>
+            </div>
+            <div class="t-price">€280 – €350</div>
+          </div>
+          <div class="trow">
+            <div class="t-name">Infografía</div>
+            <div class="t-price">€180</div>
+          </div>
+          <div class="trow">
+            <div class="t-name">Formulario editable</div>
+            <div class="t-price">€70 – €90</div>
+          </div>
+          <div class="trow">
+            <div class="t-name">Invitación</div>
+            <div class="t-price">€60</div>
+          </div>
+          <div class="trow">
+            <div class="t-name">Adaptación de pieza existente</div>
+            <div class="t-price">€50</div>
+          </div>
+          <div class="trow">
+            <div class="t-name">Presentación institucional</div>
+            <div class="t-price">€220</div>
+          </div>
+          <div class="trow">
+            <div class="t-name">Tríptico</div>
+            <div class="t-price">€250</div>
+          </div>
+          <div class="trow">
+            <div class="t-name">Cuadríptico</div>
+            <div class="t-price">€300</div>
+          </div>
+          <div class="trow">
+            <div class="t-name">Brochure / Memoria institucional</div>
+            <div class="t-price">A medida</div>
+          </div>
+        </div>
+        <div class="note-box reveal">
+          <span class="star">✦</span>La colaboración mensual ofrece condiciones
+          preferentes respecto a la contratación individual de piezas.
+        </div>
+      </section>
+
+      <!-- 03 / 04 -->
+      <section id="s3">
+        <div class="two-col">
+          <div>
+            <div class="sec-head reveal">
+              <span class="num">03</span>
+              <h3>Incluye</h3>
+            </div>
+            <div class="panel ok reveal">
+              <div class="chip ok"><span class="star-mark">?</span></div>
+              <ul>
+                <li>Dise?o y maquetaci?n de piezas gr?ficas</li>
+                <li>Investigaci?n y desarrollo de conceptos</li>
+                <li>Adaptaciones para distintos formatos</li>
+                <li>
+                  Preparaci?n de archivos para impresi?n y medios digitales
+                </li>
+                <li>
+                  Reuniones de briefing y seguimiento por videollamada o email
+                </li>
+                <li>Hasta 2 rondas de cambios por pieza</li>
+                <li>Comunicaci?n continua y organizaci?n de entregas</li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <div class="sec-head reveal">
+              <span class="num">04</span>
+              <h3>No incluye</h3>
+            </div>
+            <div class="panel no reveal">
+              <div class="chip no"></div>
+              <ul>
+                <li>
+                  Memorias institucionales o publicaciones editoriales extensas
+                </li>
+                <li>Brochures, cat?logos y manuales</li>
+                <li>Identidad visual y branding completo</li>
+                <li>Campa?as de comunicaci?n integrales</li>
+                <li>Motion graphics, animaci?n y edici?n de video</li>
+                <li>Desarrollo web</li>
+                <li>Ilustraciones de alta complejidad</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 05 TIEMPOS -->
+      <section id="s4">
+        <div class="sec-head reveal">
+          <span class="num">05</span>
+          <h3>Tiempos de entrega</h3>
+        </div>
+        <div class="time-grid">
+          <div class="time-card reveal">
+            <div class="time-ico">?</div>
+            <h5>Piezas peque?as</h5>
+            <p
+              style="
+                font-size: 12.5px;
+                color: var(--ink-soft);
+                margin: 0 0 12px;
+              "
+            >
+              Formularios, invitaciones, adaptaciones
+            </p>
+            <span class="time-tag">2 ? 3 d?as h?biles</span>
+          </div>
+          <div class="time-card reveal">
+            <div class="time-ico">?</div>
+            <h5>Proyectos de evento</h5>
+            <p
+              style="
+                font-size: 12.5px;
+                color: var(--ink-soft);
+                margin: 0 0 12px;
+              "
+            >
+              Cartel, cronograma y piezas derivadas
+            </p>
+            <span class="time-tag">4 ? 6 d?as h?biles</span>
+          </div>
+          <div class="time-card reveal">
+            <div class="time-ico">?</div>
+            <h5>Newsletter mensual</h5>
+            <p
+              style="
+                font-size: 12.5px;
+                color: var(--ink-soft);
+                margin: 0 0 12px;
+              "
+            >
+              Adaptación + portada
+            </p>
+            <span class="time-tag">5 – 7 días hábiles</span>
+          </div>
+        </div>
+        <div class="time-foot reveal">
+          <span>◷</span>Los tiempos pueden variar según la complejidad del
+          proyecto y la entrega oportuna de contenidos por parte del cliente.
+        </div>
+      </section>
+
+      <!-- 06 TERMINOS -->
+      <section id="s5">
+        <div class="sec-head reveal">
+          <span class="num">06</span>
+          <h3>Términos y condiciones</h3>
+        </div>
+        <ul class="terms-grid reveal">
+          <li>La colaboración se realiza en modalidad remota desde Ecuador.</li>
+          <li>
+            Las revisiones adicionales a las 2 rondas incluidas tendrán un costo
+            extra.
+          </li>
+          <li>
+            La comunicación se realizará por videollamada (Google Meet / Zoom /
+            Teams) y correo electrónico.
+          </li>
+          <li>
+            Los proyectos fuera del alcance mensual se presupuestarán de manera
+            independiente.
+          </li>
+          <li>El pago se realiza por adelantado de forma mensual.</li>
+          <li>Los archivos finales se entregan en los formatos acordados.</li>
+          <li>
+            Los plazos comienzan una vez recibido todo el contenido necesario.
+          </li>
+        </ul>
+      </section>
+
+         <!-- 07 CONTACTO -->
+      <section id="s6">
+        <div class="sec-head reveal">
+          <span class="num">07</span>
+          <h3>Datos de contacto</h3>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-card reveal">
+            <div class="contact-row">
+              <span class="ico">✉</span>[correo@studio.com]
+            </div>
+            <div class="contact-row">
+              <span class="ico">☎</span>[+593 99 869 9411]
+            </div>
+            <div class="contact-row">
+              <span class="ico">🌐</span>[www.tuestudio.com]
+            </div>
+            <div class="contact-row">
+              <span class="ico">📍</span>[Cuenca, Ecuador] · Trabajo remoto -
+              España Madrid
+            </div>
+          </div>
+          <div class="cta-card reveal">
+            <h4>¿Lista para comenzar?</h4>
+            <p>
+              Estoy lista para sumarme a tu equipo y dar vida a tus ideas a
+              través del diseño.
+            </p>
+            <div class="cta-btns">
+              <button class="btn btn-dark" id="accept-btn">
+                Aceptar cotización ✓
+              </button>
+              <button class="btn btn-outline" id="contact-btn">
+                Contactar →
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <p>
+          Gracias por confiar en mi trabajo. Transformemos ideas en soluciones
+          visuales que comuniquen, inspiren y generen impacto.
+        </p>
+        <div class="f-logo">
+          <img
+            src="https://ik.imagekit.io/romendieta0207/svg/logo%20horizontal%202.svg?updatedAt=1771852744785"
+            alt="Romina MTA logo horizontal"
+          />
+        </div>
+      </footer>
+    </main>
+
+    <div class="sticky-bar" id="sticky-bar">
+      <div class="sb-info">Plan seleccionado<b id="sb-plan-name">?</b></div>
+      <button class="btn btn-yellow" id="sticky-accept">
+        <script>
+          // section reveal on scroll
+          const revealEls = document.querySelectorAll(".reveal");
+          const io = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((e) => {
+                if (e.isIntersecting) {
+                  e.target.classList.add("in");
+                  io.unobserve(e.target);
+                }
+              });
+            },
+            { threshold: 0.15 },
+          );
+          revealEls.forEach((el) => io.observe(el));
+
+          // dot navigation
+          const sections = ["s0", "s1", "s2", "s3", "s4", "s5", "s6"];
+          const dotnav = document.getElementById("dotnav");
+          sections.forEach((id) => {
+            const b = document.createElement("button");
+            b.addEventListener("click", () =>
+              document
+                .getElementById(id)
+                .scrollIntoView({ behavior: "smooth" }),
+            );
+            dotnav.appendChild(b);
+          });
+          const dots = dotnav.querySelectorAll("button");
+          const secObserver = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((e) => {
+                if (e.isIntersecting) {
+                  const idx = sections.indexOf(e.target.id);
+                  dots.forEach((d) => d.classList.remove("active"));
+                  if (dots[idx]) dots[idx].classList.add("active");
+                }
+              });
+            },
+            { threshold: 0.4 },
+          );
+          sections.forEach((id) =>
+            secObserver.observe(document.getElementById(id)),
+          );
+
+          function openEmailModal(plan) {
+            const clientName =
+              document.querySelector(".client-name")?.textContent.trim() ||
+              "No especificado";
+            const projectName =
+              document.querySelector(".project-name")?.textContent.trim() ||
+              "No especificado";
+            document.getElementById("sender-name").value = "";
+            document.getElementById("sender-email").value = "";
+            document.getElementById("client-name-field").value = clientName;
+            document.getElementById("project-name-field").value = projectName;
+            document.getElementById("plan-selected-field").value = plan;
+            document.getElementById("message-field").value = "";
+            document.getElementById("email-modal").classList.add("show");
+          }
+
+          function closeEmailModal() {
+            document.getElementById("email-modal").classList.remove("show");
+          }
+
+          function sendEmailFromModal() {
+            const form = document.getElementById("email-form");
+            form.submit();
+            showToast("Tu solicitud se está enviando al propietario...");
+          }
+
+          let selectedPlan = null;
+          const stickyBar = document.getElementById("sticky-bar");
+          const sbPlanName = document.getElementById("sb-plan-name");
+          document.querySelectorAll(".select-btn").forEach((btn) => {
+            btn.addEventListener("click", () => {
+              document
+                .querySelectorAll(".pkg")
+                .forEach((p) => p.classList.remove("selected"));
+              const card = btn.closest(".pkg");
+              if (!card) return;
+              card.classList.add("selected");
+              selectedPlan = card.dataset.plan + " — " + card.dataset.price;
+              sbPlanName.textContent = selectedPlan;
+              stickyBar.classList.add("show");
+              showToast('Plan "' + card.dataset.plan + '" seleccionado');
+              openEmailModal(selectedPlan);
+            });
+          });
+
+          const toast = document.getElementById("toast");
+          const toastText = document.getElementById("toast-text");
+          let toastTimer;
+          function showToast(msg) {
+            toastText.textContent = msg;
+            toast.classList.add("show");
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => toast.classList.remove("show"), 2600);
+          }
+
+          function acceptQuote() {
+            const plan = selectedPlan ? selectedPlan : "Cotización general";
+            showToast("Cotización aceptada · " + plan + " ✓");
+          }
+
+          document
+            .getElementById("accept-btn")
+            .addEventListener("click", acceptQuote);
+          document
+            .getElementById("sticky-accept")
+            .addEventListener("click", acceptQuote);
+          document
+            .getElementById("contact-btn")
+            .addEventListener("click", () =>
+              showToast("Abriendo datos de contacto…"),
+            );
+          document
+            .getElementById("modal-close")
+            .addEventListener("click", closeEmailModal);
+          document
+            .getElementById("cancel-modal")
+            .addEventListener("click", closeEmailModal);
+          document
+            .getElementById("email-form")
+            .addEventListener("submit", (event) => {
+              event.preventDefault();
+              sendEmailFromModal();
+              closeEmailModal();
+            });
+          document
+            .getElementById("email-modal")
+            .addEventListener("click", (event) => {
+              if (event.target === document.getElementById("email-modal")) {
+                closeEmailModal();
+              }
+            });
+        </script>
+  </body>
+</html>
