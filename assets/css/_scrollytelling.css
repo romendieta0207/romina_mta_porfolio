@@ -1037,6 +1037,50 @@
   font-size: var(--font-size-lg);
   color: var(--color-secondary);
   margin-top: var(--space-lg);
+  margin-bottom: var(--space-sm);
+}
+
+.contacto__social p {
+  font-size: var(--font-size-sm);
+  color: var(--color-secondary);
+  opacity: 0.8;
+  margin-bottom: var(--space-md);
+}
+
+.social-links {
+  display: flex;
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  color: var(--color-secondary);
+  text-decoration: none;
+  border: 2px solid var(--color-secondary);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+}
+
+.social-link svg {
+  width: 20px;
+  height: 20px;
+  transition: transform var(--transition-base);
+}
+
+.social-link:hover {
+  background-color: var(--color-secondary);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.social-link:hover svg {
+  transform: scale(1.15);
 }
 
 /* Formulario */
@@ -1049,11 +1093,20 @@
 .form-group {
   display: flex;
   flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.form-group label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .form-group input,
 .form-group textarea {
-  padding: var(--space-md) 0;
+  padding: var(--space-md);
   background: transparent;
   border: none;
   border-bottom: 2px solid var(--color-secondary);
@@ -1063,44 +1116,59 @@
   transition: border-color var(--transition-base);
 }
 
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-relaxed);
+}
+
 .form-group input::placeholder,
 .form-group textarea::placeholder {
   color: var(--color-secondary);
-  opacity: 0.7;
+  opacity: 0.6;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
   border-bottom-color: var(--color-primary-dark);
+  background-color: rgba(var(--color-secondary-rgb, 0, 0, 0), 0.02);
 }
 
 /* Checkbox */
 .checkbox-group {
   flex-direction: row;
-  align-items: center;
-  gap: var(--space-sm);
+  align-items: flex-start;
+  gap: var(--space-md);
   margin-top: var(--space-md);
 }
 
 .checkbox-group input[type="checkbox"] {
   width: 20px;
   height: 20px;
+  min-width: 20px;
   border: 2px solid var(--color-secondary);
   margin: 0;
   padding: 0;
   cursor: pointer;
+  accent-color: var(--color-secondary);
+  margin-top: 2px;
 }
 
 .checkbox-group label {
   font-size: var(--font-size-sm);
   color: var(--color-secondary);
   cursor: pointer;
+  line-height: 1.4;
+  text-transform: none;
+  font-weight: var(--font-weight-regular);
+  letter-spacing: normal;
 }
 
 /* Botón */
 .contacto__btn {
-  padding: var(--space-sm) var(--space-xl);
+  padding: var(--space-md) var(--space-xl);
   background: transparent;
   border: 2px solid var(--color-secondary);
   color: var(--color-secondary);
@@ -1108,13 +1176,16 @@
   font-size: var(--font-size-base);
   cursor: pointer;
   transition: all var(--transition-base);
-  align-self: flex-end;
+  align-self: flex-start;
   text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: var(--space-md);
 }
 
 .contacto__btn:hover {
   background: var(--color-secondary);
   color: white;
+  transform: translateX(4px);
 }
 
 .form-message {
